@@ -29,6 +29,9 @@ public class AccueilActivity extends AppCompatActivity {
 
     public void goVoitureActivity(MenuItem item) {
 
+        Intent intent = new Intent(this, AddVoitureActivity.class);
+        startActivity(intent);
+
     }
 
     public void goVueActivity(MenuItem item) {
