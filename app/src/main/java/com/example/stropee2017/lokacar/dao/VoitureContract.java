@@ -17,16 +17,16 @@ public abstract class VoitureContract {
 
     public static final String SQL_CREATE_TABLE = "CREATE TABLE IF NOT EXISTS " +
             TABLE_NAME + "( "
-            + COL_ID_VOITURE + "INTEGER PRIMARY KEY AUTOINCREMENT"
-            + COL_ID_AGENCE + "INTEGER"
-            + COL_TARIF + "REAL"
+            + COL_ID_VOITURE + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + COL_ID_AGENCE + " INTEGER,"
+            + COL_TARIF + " REAL,"
             + COL_PUISSANCE + " INTEGER,"
             + COL_PORTES + " INTEGER,"
             + COL_ETAT + " TEXT,"
             + COL_IMMAT + " TEXT,"
             + COL_COULEUR + " TEXT,"
             + COL_CARBURANT + " TEXT,"
-            + COL_STYLE + "TEXT"
+            + COL_STYLE + " TEXT,"
             + COL_DISPO + " TEXT)";
 
     public static final String SQL_DROP_TABLE = " DROP TABLE IF EXISTS " + TABLE_NAME;
