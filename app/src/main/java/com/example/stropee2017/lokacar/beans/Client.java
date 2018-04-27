@@ -5,7 +5,7 @@ import android.os.Parcelable;
 
 public class Client implements Parcelable {
 
-    private int idClient;
+    private long idClient;
     private String nom, prenom, adresse, codePostal, tel, ville, permis, mail;
 
     public Client() {
@@ -24,7 +24,7 @@ public class Client implements Parcelable {
     }
 
     protected Client(Parcel in) {
-        idClient = in.readInt();
+        idClient = in.readLong();
         nom = in.readString();
         prenom = in.readString();
         adresse = in.readString();
@@ -47,11 +47,12 @@ public class Client implements Parcelable {
         }
     };
 
-    public int getIdClient() {
+    public long getIdClient() {
         return idClient;
     }
 
-    public void setIdClient(int idClient) {
+    public void setIdClient(long idClient) {
+
         this.idClient = idClient;
     }
 
@@ -141,7 +142,7 @@ public class Client implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(idClient);
+        dest.writeLong(idClient);
         dest.writeString(nom);
         dest.writeString(prenom);
         dest.writeString(adresse);
