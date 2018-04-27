@@ -1,4 +1,4 @@
-package com.example.stropee2017.lokacar.beans;
+package com.example.stropee2017.lokacar.dao;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

@@ -1,11 +1,13 @@
 package com.example.stropee2017.lokacar;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.stropee2017.lokacar.beans.Client;
 import com.example.stropee2017.lokacar.dao.ClientDAO;
@@ -20,12 +22,55 @@ public class AddClientActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_client);
 
+    }
 
+    @Override
+    protected void onResume() {
+
+        Intent intent = getIntent();
+
+        if (intent != null) {
+
+            client = intent.getParcelableExtra("client");
+
+            if (client != null) {
+
+                et = findViewById(R.id.editNom);
+                et.setText(client.getNom());
+
+                et = findViewById(R.id.editPrenom);
+                et.setText(client.getPrenom());
+
+                et = findViewById(R.id.editAdresse);
+                et.setText(client.getAdresse());
+
+                et = findViewById(R.id.editCodepostal);
+                et.setText(client.getCodePostal());
+
+                et = findViewById(R.id.editVille);
+                et.setText(client.getVille());
+
+                et = findViewById(R.id.editTelephone);
+                et.setText(client.getTel());
+
+                et = findViewById(R.id.editMail);
+                et.setText(client.getMail());
+
+                et = findViewById(R.id.editPermis);
+                et.setText(client.getPermis());
+            }
+
+        }
+
+        super.onResume();
     }
 
     public void saveClient(View view) {
 
-        client = new Client();
+        if (client == null) {
+
+            client = new Client();
+        }
 
         et = findViewById(R.id.editNom);
         client.setNom(et.getText().toString());
@@ -57,7 +102,7 @@ public class AddClientActivity extends AppCompatActivity {
 
                 ClientDAO dao = new ClientDAO(AddClientActivity.this);
                 Log.i("TAG", client.toString());
-                dao.insert(client);
+                client.setIdClient(dao.insertOrUpdate(client));
                 finish();
             }
         });
