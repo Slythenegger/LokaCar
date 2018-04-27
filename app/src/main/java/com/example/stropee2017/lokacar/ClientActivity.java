@@ -1,12 +1,11 @@
 package com.example.stropee2017.lokacar;
 
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.stropee2017.lokacar.beans.BddHelper;
+import com.example.stropee2017.lokacar.dao.VoitureDAO;
 
 public class ClientActivity extends AppCompatActivity {
 

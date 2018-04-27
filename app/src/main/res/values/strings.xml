@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">LokaCar</string>
+    <string name="idVoiture">Voiture n° : </string>
+    <string name="txtMarque">Marque : </string>
+    <string name="txtModele">Modèle : </string>
+    <string name="txtImmat">Immatriculation : </string>
+    <string name="txtCouleur">Couleur :</string>
+    <string name="txtCarburant">Carburant : </string>
+    <string name="txtEtat">Etat de la voiture : </string>
+    <string name="txtTarif">Tarif journalier :</string>
+    <string name="txtPorte">Nombre de portes : </string>
+    <string name="txtStyle">Style de la voiture :</string>
+    <string name="txtDispo">Disponibilité :</string>
+    <string name="txtAnnee">Année : </string>
+    <string name="txtPuissance">Puissance : </string>
+    <string name="txtEuro">euros</string>
+    <string name="txtCV">CV</string>
+    <string name="title_activity_add_voiture">AddVoitureActivity</string>
 </resources>

@@ -4,7 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import com.example.stropee2017.lokacar.beans.BddHelper;
+
 import com.example.stropee2017.lokacar.beans.Client;
 import java.util.ArrayList;
 import java.util.List;
