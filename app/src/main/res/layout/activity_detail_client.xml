@@ -5,7 +5,7 @@
     android:padding="5dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddClientActivity">
+    tools:context=".DetailClientActivity">
 
 
     <LinearLayout
@@ -49,17 +49,19 @@
         android:layout_below="@+id/first">
 
 
-        <EditText
-            android:id="@+id/editNom"
+        <TextView
+            android:id="@+id/txtDetailNom"
             android:layout_width="0dp"
+            style="@style/TextAppearance.AppCompat.Large"
             android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/txtNom"
             android:layout_weight="0.5" />
 
-        <EditText
-            android:id="@+id/editPrenom"
+        <TextView
+            android:id="@+id/txtDetailPrenom"
+            style="@style/TextAppearance.AppCompat.Large"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
@@ -94,8 +96,9 @@
         android:layout_below="@+id/third">
 
 
-        <EditText
-            android:id="@+id/editAdresse"
+        <TextView
+            android:id="@+id/txtDetailAdresse"
+            style="@style/TextAppearance.AppCompat.Large"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -131,14 +134,16 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/five">
 
-        <EditText
-            android:id="@+id/editCodepostal"
+        <TextView
+            android:id="@+id/txtDetailCodepostal"
+            style="@style/TextAppearance.AppCompat.Large"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.5" />
 
-        <EditText
-            android:id="@+id/editVille"
+        <TextView
+            android:id="@+id/txtDetailVille"
+            style="@style/TextAppearance.AppCompat.Large"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.5" />
@@ -168,8 +173,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/clientSeven">
 
-        <EditText
-            android:id="@+id/editTelephone"
+        <TextView
+            android:id="@+id/txtDetailTelephone"
+            style="@style/TextAppearance.AppCompat.Large"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -198,8 +204,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/clientNine">
 
-        <EditText
-            android:id="@+id/editMail"
+        <TextView
+            android:id="@+id/txtDetailMail"
+            style="@style/TextAppearance.AppCompat.Large"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -228,8 +235,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/clientEleven">
 
-        <EditText
-            android:id="@+id/editPermis"
+        <TextView
+            android:id="@+id/txtDetailPermis"
+            style="@style/TextAppearance.AppCompat.Large"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -242,7 +250,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="36dp"
-        android:text="Valider"
-        android:onClick="saveClient"/>
+        android:text="Modifier"
+        android:onClick="editClient"/>
 
 </RelativeLayout>

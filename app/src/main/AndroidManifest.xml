@@ -28,6 +28,8 @@
 
 
         </activity>
+        <activity android:name=".AddClientActivity" />
+        <activity android:name=".DetailClientActivity"></activity>
     </application>
 
 </manifest>
