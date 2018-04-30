@@ -2,6 +2,7 @@ package com.example.stropee2017.lokacar;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ListView;
 
 import com.example.stropee2017.lokacar.adapter.VoitureAdapter;
@@ -18,7 +19,7 @@ public class VoitureActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.voiture_list);
+        setContentView(R.layout.activity_voiture);
     }
 
 
@@ -27,13 +28,25 @@ public class VoitureActivity extends AppCompatActivity {
     protected void onResume() {
 
         //la liste s'intégrera dans la layout identifié par listVoitures
-        ListView lv = findViewById(R.id.listVoitures);
+        ListView lv = (ListView) findViewById(R.id.listVoitures);
 
         VoitureDAO voitureDAO = new VoitureDAO(VoitureActivity.this);
         //appel de la fonction getListe -> récupération des voitures dans ma BDD
         listeVoitures = voitureDAO.getListe();
 
         final VoitureAdapter adapter = new VoitureAdapter(VoitureActivity.this, R.layout.voiture_list, listeVoitures);
+
+        if (lv == null) {
+            Log.v("TAG", "lv est nul");
+        } else {
+            Log.v("TAG", "lv pas nul");
+        }
+
+        if (adapter == null) {
+            Log.v("TAG", "adapter est nul");
+        } else {
+            Log.v("TAG", "adapter pas nul");
+        }
 
         lv.setAdapter(adapter);
 

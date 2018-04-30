@@ -39,9 +39,17 @@ public class VoitureAdapter extends ArrayAdapter<Voiture> {
             holder.marque = convertView.findViewById(R.id.txtListMarque);
             holder.modele = convertView.findViewById(R.id.txtListModele);
             holder.immat = convertView.findViewById(R.id.txtListImmat);
+
+            convertView.setTag(holder);
+
+        } else {
+            holder = (ViewHolder) convertView.getTag();
         }
 
-
+        Voiture voiture = getItem(position);
+        holder.marque.setText(voiture.getMarque());
+        holder.modele.setText(voiture.getModele());
+        holder.immat.setText(voiture.getImmat());
 
         return convertView;
 

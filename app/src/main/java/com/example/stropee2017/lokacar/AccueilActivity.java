@@ -30,7 +30,7 @@ public class AccueilActivity extends AppCompatActivity {
 
     public void goVoitureActivity(MenuItem item) {
 
-        Intent intent = new Intent(this, AddVoitureActivity.class);
+        Intent intent = new Intent(this, VoitureActivity.class);
         startActivity(intent);
 
     }
