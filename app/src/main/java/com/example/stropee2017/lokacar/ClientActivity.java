@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.stropee2017.lokacar.adapter.ClientAdapter;
+import com.example.stropee2017.lokacar.beans.Agence;
 import com.example.stropee2017.lokacar.beans.Client;
 import com.example.stropee2017.lokacar.dao.ClientDAO;
 import com.example.stropee2017.lokacar.dao.VoitureDAO;
@@ -52,6 +53,7 @@ public class ClientActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
 
         super.onResume();
     }

@@ -4,9 +4,9 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.example.stropee2017.lokacar.dao.ClientContract;
-import com.example.stropee2017.lokacar.dao.PhotoProfilContract;
-import com.example.stropee2017.lokacar.dao.VoitureContract;
+import com.example.stropee2017.lokacar.dao.contract.ClientContract;
+import com.example.stropee2017.lokacar.dao.contract.PhotoProfilContract;
+import com.example.stropee2017.lokacar.dao.contract.VoitureContract;
 
 public class BddHelper extends SQLiteOpenHelper {
 
