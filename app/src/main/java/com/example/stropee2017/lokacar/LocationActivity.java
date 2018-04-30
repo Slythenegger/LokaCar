@@ -5,17 +5,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.stropee2017.lokacar.beans.Client;
+import com.example.stropee2017.lokacar.beans.Location;
 import com.example.stropee2017.lokacar.beans.Voiture;
+import com.example.stropee2017.lokacar.dao.LocationDAO;
+
+import java.util.Date;
 
 public class LocationActivity extends AppCompatActivity {
 
     TextView tv;
     Client client;
     Voiture voiture;
-
+    EditText et;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,10 +50,10 @@ public class LocationActivity extends AppCompatActivity {
             tv = findViewById(R.id.txtIdNomClient);
             tv.setText(client.getNom() + " " + client.getPrenom());
         }
-        if(requestCode == 200 && resultCode == RESULT_OK){
+        if (requestCode == 200 && resultCode == RESULT_OK) {
             this.voiture = data.getParcelableExtra("voiture");
             tv = findViewById(R.id.txtIdVoiture);
-            tv.setText(voiture.getMarque()+" "+voiture.getImmat());
+            tv.setText(voiture.getMarque() + " " + " " + voiture.getModele() + " " + voiture.getImmat());
         }
     }
 
@@ -58,7 +63,18 @@ public class LocationActivity extends AppCompatActivity {
 
     public void addNewLocation(View view) {
 
+        LocationDAO dao = new LocationDAO(this);
 
+        Location location = new Location();
+
+        location.setVoiture(voiture);
+        location.setClient(client);
+
+        et = (EditText) findViewById(R.id.dateDepart);
+        location.setDebutLocation(new Date(et.getText().toString()));
+        
+        et = (EditText) findViewById(R.id.dateRetour);
+        location.setFinLocation(new Date(et.getText().toString()));
 
     }
 }

@@ -99,7 +99,7 @@
         android:layout_alignParentLeft="true" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/dateRetour"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
