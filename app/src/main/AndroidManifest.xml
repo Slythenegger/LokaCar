@@ -3,13 +3,13 @@
     package="com.example.stropee2017.lokacar">
 
     <application
+        android:name=".beans.Agence"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:name=".beans.Agence" >
+        android:theme="@style/AppTheme">
         <activity android:name=".ClientActivity" />
         <activity android:name=".AddVoitureActivity" />
         <activity android:name=".AddClientActivity" />
@@ -21,7 +21,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".VoitureActivity"></activity>
+        <activity android:name=".VoitureActivity" />
+        <activity android:name=".LocationActivity"></activity>
     </application>
 
 </manifest>

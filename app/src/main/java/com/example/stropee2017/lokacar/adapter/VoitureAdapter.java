@@ -41,6 +41,8 @@ public class VoitureAdapter extends ArrayAdapter<Voiture> {
             holder.immat = convertView.findViewById(R.id.txtListImmat);
         }
 
+
+
         return convertView;
 
     }

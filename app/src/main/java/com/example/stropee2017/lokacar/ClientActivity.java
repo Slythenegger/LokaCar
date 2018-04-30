@@ -54,6 +54,28 @@ public class ClientActivity extends AppCompatActivity {
             }
         });
 
+        lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Intent intent = getIntent();
+                if (intent.getBooleanExtra("newLocation", false) == false) {
+
+                    return false;
+
+                } else {
+                    Intent monIntent = new Intent();
+                    Client client = listeClient.get(position);
+                    monIntent.putExtra("client", client);
+                    setResult(RESULT_OK, monIntent);
+                    finish();
+                    return true;
+                }
+
+
+            }
+        });
+
 
         super.onResume();
     }

@@ -54,8 +54,7 @@ public class AddVoitureActivity extends AppCompatActivity {
         editAgence = (EditText) findViewById(R.id.txtAgence);
         //récupération de la ville de la classe Agence que j'associe à mon editText
         String agence = ((Agence) this.getApplication()).getVille();
-        Log.v("TAG", agence);
-        editAgence.setText(agence);
+         editAgence.setText(agence);
 
 
     }
