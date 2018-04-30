@@ -5,9 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.stropee2017.lokacar.adapter.VoitureAdapter;
+import com.example.stropee2017.lokacar.beans.Client;
 import com.example.stropee2017.lokacar.beans.Agence;
 import com.example.stropee2017.lokacar.beans.Voiture;
 import com.example.stropee2017.lokacar.dao.VoitureDAO;
@@ -53,6 +55,27 @@ public class VoitureActivity extends AppCompatActivity {
         });
         */
 
+        lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Intent intent = getIntent();
+                if (intent.getBooleanExtra("newLocation", false) == false) {
+
+                    return false;
+
+                } else {
+                    Intent monIntent = new Intent();
+                    Voiture voiture = listeVoitures.get(position);
+                    monIntent.putExtra("voiture", voiture);
+                    setResult(RESULT_OK, monIntent);
+                    finish();
+                    return true;
+                }
+
+
+            }
+        });
         super.onResume();
 
     }

@@ -5,38 +5,24 @@ import java.util.List;
 
 public class Location {
 
-    private long idVoiture, idClient, idLocation;
+    private long idLocation;
     private Date debutLocation, finLocation;
     private float prixLocation;
+    private Client client;
+    private Voiture voiture;
     private List<String> etatDepart, etatRetour;
 
     public Location() {
     }
 
-    public Location(long idVoiture, long idClient, Date debutLocation, Date finLocation, float prixLocation, List<String> etatDepart, List<String> etatRetour) {
-        this.idVoiture = idVoiture;
-        this.idClient = idClient;
+    public Location(Date debutLocation, Date finLocation, float prixLocation, Client client, Voiture voiture, List<String> etatDepart, List<String> etatRetour) {
         this.debutLocation = debutLocation;
         this.finLocation = finLocation;
         this.prixLocation = prixLocation;
+        this.client = client;
+        this.voiture = voiture;
         this.etatDepart = etatDepart;
         this.etatRetour = etatRetour;
-    }
-
-    public long getIdVoiture() {
-        return idVoiture;
-    }
-
-    public void setIdVoiture(long idVoiture) {
-        this.idVoiture = idVoiture;
-    }
-
-    public long getIdClient() {
-        return idClient;
-    }
-
-    public void setIdClient(long idClient) {
-        this.idClient = idClient;
     }
 
     public long getIdLocation() {
@@ -71,6 +57,22 @@ public class Location {
         this.prixLocation = prixLocation;
     }
 
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
+    public Voiture getVoiture() {
+        return voiture;
+    }
+
+    public void setVoiture(Voiture voiture) {
+        this.voiture = voiture;
+    }
+
     public List<String> getEtatDepart() {
         return etatDepart;
     }
@@ -85,5 +87,19 @@ public class Location {
 
     public void setEtatRetour(List<String> etatRetour) {
         this.etatRetour = etatRetour;
+    }
+
+    @Override
+    public String toString() {
+        return "Location{" +
+                "idLocation=" + idLocation +
+                ", debutLocation=" + debutLocation +
+                ", finLocation=" + finLocation +
+                ", prixLocation=" + prixLocation +
+                ", client=" + client +
+                ", voiture=" + voiture +
+                ", etatDepart=" + etatDepart +
+                ", etatRetour=" + etatRetour +
+                '}';
     }
 }

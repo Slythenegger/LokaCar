@@ -8,10 +8,13 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.stropee2017.lokacar.beans.Client;
+import com.example.stropee2017.lokacar.beans.Voiture;
 
 public class LocationActivity extends AppCompatActivity {
 
     TextView tv;
+    Client client;
+    Voiture voiture;
 
 
     @Override
@@ -21,6 +24,10 @@ public class LocationActivity extends AppCompatActivity {
     }
 
     public void addVoiture(View view) {
+        Intent intent = new Intent(this, VoitureActivity.class);
+        intent.putExtra("newLocation", true);
+        startActivityForResult(intent, 200);
+
     }
 
     public void addClient(View view) {
@@ -34,13 +41,23 @@ public class LocationActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == 100 && resultCode == RESULT_OK) {
-            Client client = data.getParcelableExtra("client");
-
+            this.client = data.getParcelableExtra("client");
             tv = findViewById(R.id.txtIdNomClient);
             tv.setText(client.getNom() + " " + client.getPrenom());
-
-
         }
+        if(requestCode == 200 && resultCode == RESULT_OK){
+            this.voiture = data.getParcelableExtra("voiture");
+            tv = findViewById(R.id.txtIdVoiture);
+            tv.setText(voiture.getMarque()+" "+voiture.getImmat());
+        }
+    }
+
+    public void addPhotos(View view) {
+
+    }
+
+    public void addNewLocation(View view) {
+
 
 
     }
