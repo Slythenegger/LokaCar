@@ -4,9 +4,10 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.example.stropee2017.lokacar.dao.ClientContract;
-import com.example.stropee2017.lokacar.dao.PhotoProfilContract;
-import com.example.stropee2017.lokacar.dao.VoitureContract;
+import com.example.stropee2017.lokacar.dao.contract.AgenceContract;
+import com.example.stropee2017.lokacar.dao.contract.ClientContract;
+import com.example.stropee2017.lokacar.dao.contract.PhotoProfilContract;
+import com.example.stropee2017.lokacar.dao.contract.VoitureContract;
 
 public class BddHelper extends SQLiteOpenHelper {
 
@@ -22,6 +23,7 @@ public class BddHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
 
         db.execSQL(ClientContract.SQL_CREATE_TABLE);
+        db.execSQL(AgenceContract.SQL_CREATE_TABLE);
         db.execSQL(VoitureContract.SQL_CREATE_TABLE);
         db.execSQL(PhotoProfilContract.SQL_CREATE_TABLE);
 
@@ -32,6 +34,7 @@ public class BddHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
         db.execSQL(PhotoProfilContract.SQL_DROP_TABLE);
+        db.execSQL(AgenceContract.SQL_DROP_TABLE);
         db.execSQL(VoitureContract.SQL_DROP_TABLE);
         db.execSQL(ClientContract.SQL_DROP_TABLE);
 

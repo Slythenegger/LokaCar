@@ -1,4 +1,4 @@
-package com.example.stropee2017.lokacar.dao;
+package com.example.stropee2017.lokacar.dao.contract;
 
 public abstract class ClientContract {
 

@@ -1,4 +1,4 @@
-package com.example.stropee2017.lokacar.dao;
+package com.example.stropee2017.lokacar.dao.contract;
 
 public abstract class PhotoProfilContract {
 
@@ -14,7 +14,7 @@ public abstract class PhotoProfilContract {
             + COL_ID_PHOTO_PROFIL + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + COL_PATH + " TEXT, "
             + COL_ID_VOITURE + " INTEGER,"
-            + "FOREIGN KEY ("+COL_ID_VOITURE+") REFERENCES "+VoitureContract.TABLE_NAME+"("+VoitureContract.COL_ID_VOITURE+"))";
+            + "FOREIGN KEY ("+COL_ID_VOITURE+") REFERENCES "+ VoitureContract.TABLE_NAME+"("+VoitureContract.COL_ID_VOITURE+"))";
 
     public static final String SQL_DROP_TABLE  =" DROP TABLE IF EXISTS " + TABLE_NAME;
 

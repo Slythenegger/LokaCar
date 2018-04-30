@@ -23,6 +23,7 @@ public class Client implements Parcelable {
         this.mail = mail;
     }
 
+
     protected Client(Parcel in) {
         idClient = in.readLong();
         nom = in.readString();

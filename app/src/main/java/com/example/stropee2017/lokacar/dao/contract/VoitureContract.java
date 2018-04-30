@@ -1,4 +1,4 @@
-package com.example.stropee2017.lokacar.dao;
+package com.example.stropee2017.lokacar.dao.contract;
 
 public abstract class VoitureContract {
 
@@ -33,7 +33,8 @@ public abstract class VoitureContract {
             + COL_CARBURANT + " TEXT,"
             + COL_STYLE + " TEXT,"
             + COL_DISPO + " TEXT,"
-            + COL_ANNEE + " TEXT)";
+            + COL_ANNEE + " TEXT),"
+            + "FOREIGN KEY (" + COL_ID_AGENCE + ") REFERENCES " + AgenceContract.TABLE_NAME + "(" + AgenceContract.COL_ID_AGENCE + "))";
 
     public static final String SQL_DROP_TABLE = " DROP TABLE IF EXISTS " + TABLE_NAME;
 }

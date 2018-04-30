@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.stropee2017.lokacar.beans.Voiture;
+import com.example.stropee2017.lokacar.dao.contract.VoitureContract;
 
 import java.util.ArrayList;
 import java.util.List;
