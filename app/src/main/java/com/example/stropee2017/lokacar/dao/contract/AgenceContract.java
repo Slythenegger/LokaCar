@@ -1,6 +1,6 @@
 package com.example.stropee2017.lokacar.dao.contract;
 
-public class AgenceContract {
+public abstract class AgenceContract {
 
     public static final String TABLE_NAME = "AGENCE";
     public static final String COL_ID_AGENCE = "ID_AGENCE";
