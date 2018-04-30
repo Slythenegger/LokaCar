@@ -21,7 +21,7 @@ public abstract class LocationContract {
             + COL_DATE_DEBUT_LOCATION + " TEXT,"
             + COL_DATE_FIN_LOCATION + " TEXT,"
             + COL_PRIX_LOCATION + " REAL,"
-            + "FOREIGN KEY (" + COL_ID_VOITURE + ") REFERENCES " + VoitureContract.TABLE_NAME + "(" + VoitureContract.COL_ID_VOITURE
+            + "FOREIGN KEY (" + COL_ID_VOITURE + ") REFERENCES " + VoitureContract.TABLE_NAME + "(" + VoitureContract.COL_ID_VOITURE+"),"
             + "FOREIGN KEY (" + COL_ID_CLIENT + ") REFERENCES " + ClientContract.TABLE_NAME + "(" + ClientContract.COL_ID_CLIENT + "))";
 
     public static final String SQL_DROP_TABLE = " DROP TABLE IF EXISTS " + TABLE_NAME;

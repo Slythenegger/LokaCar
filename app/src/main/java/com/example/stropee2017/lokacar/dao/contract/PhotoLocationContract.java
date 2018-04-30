@@ -14,7 +14,7 @@ public abstract class PhotoLocationContract {
             + COL_ID_PHOTO_LOCATION + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + COL_PATH + " TEXT, "
             + COL_ID_LOCATION + " INTEGER,"
-            + COL_ETAT_DES_LIEUX + " INTEGER"
+            + COL_ETAT_DES_LIEUX + " INTEGER,"
             + "FOREIGN KEY (" + COL_ID_LOCATION + ") REFERENCES " + LocationContract.TABLE_NAME + "(" + LocationContract.COL_ID_LOCATION + "))";
 
     public static final String SQL_DROP_TABLE = " DROP TABLE IF EXISTS " + TABLE_NAME;
