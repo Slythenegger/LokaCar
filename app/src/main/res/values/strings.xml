@@ -1,4 +1,5 @@
 <resources>
+    <string name="title_activity_add_voiture">AddVoitureActivity</string>
     <string name="app_name">LokaCar</string>
     <string name="idVoiture">Voiture n° : </string>
     <string name="txtMarque">Marque : </string>
@@ -15,5 +16,7 @@
     <string name="txtPuissance">Puissance : </string>
     <string name="txtEuro">euros</string>
     <string name="txtCV">CV</string>
-    <string name="title_activity_add_voiture">AddVoitureActivity</string>
+    <string name="btnAjoutVoiture">Valider</string>
+    <string name="title_activity_voiture_activity">voiture_activity</string>
+    <string name="title_activity_voiture">VoitureActivity</string>
 </resources>
