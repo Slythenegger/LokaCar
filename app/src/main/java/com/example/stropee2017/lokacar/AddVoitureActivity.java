@@ -3,9 +3,11 @@ package com.example.stropee2017.lokacar;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
+import com.example.stropee2017.lokacar.beans.Agence;
 import com.example.stropee2017.lokacar.beans.Voiture;
 import com.example.stropee2017.lokacar.dao.BddHelper;
 import com.example.stropee2017.lokacar.dao.VoitureDAO;
@@ -29,6 +31,7 @@ public class AddVoitureActivity extends AppCompatActivity {
     private EditText editDispo;
     private EditText editEtat;
     private EditText editTarif;
+    private EditText editAgence;
 
 
     @Override
@@ -48,6 +51,11 @@ public class AddVoitureActivity extends AppCompatActivity {
         editDispo = (EditText) findViewById(R.id.idEditDispo);
         editEtat = (EditText) findViewById(R.id.idEditEtat);
         editTarif = (EditText) findViewById(R.id.idEditTarif);
+        editAgence = (EditText) findViewById(R.id.txtAgence);
+        //récupération de la ville de la classe Agence que j'associe à mon editText
+        String agence = ((Agence) this.getApplication()).getVille();
+        Log.v("TAG", agence);
+        editAgence.setText(agence);
 
 
     }

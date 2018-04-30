@@ -17,6 +17,7 @@ public abstract class VoitureContract {
     public static final String COL_STYLE = "STYLE";
     public static final String COL_DISPO = "DISPONIBILITE";
     public static final String COL_ANNEE = "ANNEE";
+    public static final String COL_AGENCE = "AGENCE";
 
     public static final String SQL_CREATE_TABLE = "CREATE TABLE IF NOT EXISTS " +
             TABLE_NAME + "( "
@@ -33,7 +34,8 @@ public abstract class VoitureContract {
             + COL_CARBURANT + " TEXT,"
             + COL_STYLE + " TEXT,"
             + COL_DISPO + " TEXT,"
-            + COL_ANNEE + " TEXT),"
+            + COL_ANNEE + " TEXT,"
+            + COL_AGENCE+ "TEXT)"
             + "FOREIGN KEY (" + COL_ID_AGENCE + ") REFERENCES " + AgenceContract.TABLE_NAME + "(" + AgenceContract.COL_ID_AGENCE + "))";
 
     public static final String SQL_DROP_TABLE = " DROP TABLE IF EXISTS " + TABLE_NAME;
