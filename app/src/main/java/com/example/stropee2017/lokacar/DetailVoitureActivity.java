@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.example.stropee2017.lokacar.beans.Agence;
 import com.example.stropee2017.lokacar.beans.Voiture;
 import com.example.stropee2017.lokacar.dao.VoitureDAO;
 
@@ -62,15 +63,18 @@ public class DetailVoitureActivity extends AppCompatActivity {
 
             textMarque.setText(voiture.getMarque());
             textModele.setText(voiture.getModele());
-            textMarque.setText(voiture.getMarque());
-            textMarque.setText(voiture.getMarque());
-            textMarque.setText(voiture.getMarque());
-            textMarque.setText(voiture.getMarque());
-            textMarque.setText(voiture.getMarque());
-            textMarque.setText(voiture.getMarque());
-            textMarque.setText(voiture.getMarque());
-            textMarque.setText(voiture.getMarque());
-            textMarque.setText(voiture.getMarque());
+            textImmat.setText(voiture.getImmat());
+            textAnnee.setText(voiture.getAnnee());
+            textPuissance.setText(voiture.getPuissance());
+            textPortes.setText(voiture.getPortes());
+            textCarburant.setText(voiture.getCarburant());
+            textCouleur.setText(voiture.getCouleur());
+            textStyle.setText(voiture.getStyle());
+            textDispo.setText(voiture.getDispo());
+            textTarif.setText(voiture.getTarif());
+            textEtat.setText(voiture.getEtatVoiture());
+            //récupérer le nom de l'agence lié à son id ;
+            textAgence.setText(((Agence) this.getApplication()).getVille());
 
 
         }

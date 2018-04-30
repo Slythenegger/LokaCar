@@ -76,6 +76,8 @@ public class AddVoitureActivity extends AppCompatActivity {
         int tarif = Integer.parseInt(editTarif.getText().toString());
 
         nouvelleVoiture = new Voiture(tarif, puissance, portes, marque, modele, etatVoiture, immat, couleur, carburant, style, dispo, annee);
+        nouvelleVoiture.setIdAgence(((Agence) this.getApplication()).getIdAgence());
+        Log.v("TAG", "voiture :"+nouvelleVoiture);
         voitureDAO = new VoitureDAO(AddVoitureActivity.this);
         long id = voitureDAO.insert(nouvelleVoiture);
         nouvelleVoiture.setId(id);

@@ -7,12 +7,18 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.example.stropee2017.lokacar.beans.Agence;
+
 public class AccueilActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_accueil);
+
+        ((Agence) this.getApplication()).setVille("Nantes");
+        ((Agence) this.getApplication()).setIdAgence(1);
+
     }
 
 

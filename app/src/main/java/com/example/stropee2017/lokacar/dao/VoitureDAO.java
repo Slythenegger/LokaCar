@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.example.stropee2017.lokacar.beans.Agence;
 import com.example.stropee2017.lokacar.beans.Voiture;
 import com.example.stropee2017.lokacar.dao.contract.VoitureContract;
 
@@ -38,6 +39,7 @@ public class VoitureDAO {
         c.put(VoitureContract.COL_TARIF, item.getTarif());
         c.put(VoitureContract.COL_ETAT, item.getEtatVoiture());
         c.put(VoitureContract.COL_ANNEE, item.getAnnee());
+        c.put(VoitureContract.COL_ID_AGENCE, item.getIdAgence());
 
         long id = db.insert(VoitureContract.TABLE_NAME, null, c);
 
@@ -49,7 +51,7 @@ public class VoitureDAO {
 
     }
 
-    public List<Voiture> getListe() {
+    public List<Voiture> getListe(long id) {
 
         listVoitures = new ArrayList<>();
 
@@ -57,7 +59,7 @@ public class VoitureDAO {
         SQLiteDatabase db = helper.getReadableDatabase();
 
         //select * from
-        Cursor c = db.query(VoitureContract.TABLE_NAME, null, null, null, null, null, null);
+        Cursor c = db.query(VoitureContract.TABLE_NAME, null, VoitureContract.COL_ID_AGENCE+"=?", new String[]{String.valueOf(id)}, null, null, null);
 
         if (c != null && c.moveToFirst()) {
             do {
@@ -104,6 +106,7 @@ public class VoitureDAO {
         voiture.setStyle(c.getString(c.getColumnIndex(VoitureContract.COL_STYLE)));
         voiture.setDispo(c.getString(c.getColumnIndex(VoitureContract.COL_DISPO)));
         voiture.setAnnee(c.getString(c.getColumnIndex(VoitureContract.COL_ANNEE)));
+        voiture.setIdAgence(c.getColumnIndex(VoitureContract.COL_ID_AGENCE));
 
         return voiture;
     }
