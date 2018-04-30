@@ -4,47 +4,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailVoitureActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".DetailVoitureActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
-
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/idMarque"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txtMarque"
-                />
+                android:text="@string/txtMarque" />
 
             <TextView
                 android:id="@+id/recupMarque"
                 android:layout_width="0dp"
-                android:layout_weight="0.25"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_weight="0.25" />
 
             <TextView
                 android:id="@+id/idModele"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txtModele"
-                />
+                android:text="@string/txtModele" />
 
             <TextView
                 android:id="@+id/recupModele"
                 android:layout_width="0dp"
-                android:layout_weight="0.25"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_weight="0.25" />
 
         </LinearLayout>
 
@@ -56,28 +51,25 @@
                 android:id="@+id/idImmat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txtImmat"
-                />
+                android:text="@string/txtImmat" />
 
             <TextView
                 android:id="@+id/recupImmat"
                 android:layout_width="0dp"
-                android:layout_weight="0.25"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_weight="0.25" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txtAnnee"
-                />
+                android:text="@string/txtAnnee" />
 
-            <EditText
-                android:id="@+id/idEditAnnee"
+            <TextView
+                android:id="@+id/recupAnnee"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.25"
-                android:inputType="number"
-                />
+                android:inputType="number" />
 
         </LinearLayout>
 
@@ -89,29 +81,25 @@
                 android:id="@+id/idCouleur"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txtCouleur"
-                />
+                android:text="@string/txtCouleur" />
 
-            <EditText
-                android:id="@+id/idEditCouleur"
+            <TextView
+                android:id="@+id/recupCouleur"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.25"
-                />
+                android:layout_weight="0.25" />
 
             <TextView
                 android:id="@+id/idCarburant"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txtCarburant"
-                />
+                android:text="@string/txtCarburant" />
 
-            <EditText
-                android:id="@+id/idEditCarburant"
+            <TextView
+                android:id="@+id/recupCarburant"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.25"
-                />
+                android:layout_weight="0.25" />
 
         </LinearLayout>
 
@@ -123,31 +111,27 @@
                 android:id="@+id/idPuissance"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txtPuissance"
-                />
+                android:text="@string/txtPuissance" />
 
-            <EditText
-                android:id="@+id/idEditPuissance"
+            <TextView
+                android:id="@+id/recupPuissance"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.25"
-                android:inputType="number"
-                />
+                android:inputType="number" />
 
             <TextView
                 android:id="@+id/idPortes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txtPorte"
-                />
+                android:text="@string/txtPorte" />
 
-            <EditText
-                android:id="@+id/idEditPortes"
+            <TextView
+                android:id="@+id/recupPortes"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.25"
-                android:inputType="number"
-                />
+                android:inputType="number" />
 
         </LinearLayout>
 
@@ -159,29 +143,25 @@
                 android:id="@+id/idStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txtStyle"
-                />
+                android:text="@string/txtStyle" />
 
-            <EditText
-                android:id="@+id/idEditStyle"
+            <TextView
+                android:id="@+id/recupStyle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.25"
-                />
+                android:layout_weight="0.25" />
 
             <TextView
                 android:id="@+id/idDispo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txtDispo"
-                />
+                android:text="@string/txtDispo" />
 
-            <EditText
-                android:id="@+id/idEditDispo"
+            <TextView
+                android:id="@+id/recupDispo"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.25"
-                />
+                android:layout_weight="0.25" />
 
         </LinearLayout>
 
@@ -192,21 +172,18 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txtTarif"
-                />
+                android:text="@string/txtTarif" />
 
-            <EditText
-                android:id="@+id/idEditTarif"
+            <TextView
+                android:id="@+id/recupTarif"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                />
+                android:inputType="number" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/txtEuro"
-                />
+                android:text="@string/txtEuro" />
 
         </LinearLayout>
 
@@ -217,14 +194,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txtEtat"
-                />
+                android:text="@string/txtEtat" />
 
-            <EditText
-                android:id="@+id/idEditEtat"
+            <TextView
+                android:id="@+id/recupEtat"
                 android:layout_width="70dp"
-                android:layout_height="wrap_content"
-                />
+                android:layout_height="wrap_content" />
 
         </LinearLayout>
 
@@ -235,15 +210,15 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txtAgence"
-                />
+                android:text="@string/txtAgence" />
 
-            <EditText
-                android:id="@+id/txtAgence"
+            <TextView
+                android:id="@+id/recupAgence"
                 android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                />
+                android:layout_height="wrap_content" />
 
         </LinearLayout>
+
+    </LinearLayout>
 
 </LinearLayout>

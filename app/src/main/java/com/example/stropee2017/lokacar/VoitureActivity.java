@@ -36,18 +36,6 @@ public class VoitureActivity extends AppCompatActivity {
 
         final VoitureAdapter adapter = new VoitureAdapter(VoitureActivity.this, R.layout.voiture_list, listeVoitures);
 
-        if (lv == null) {
-            Log.v("TAG", "lv est nul");
-        } else {
-            Log.v("TAG", "lv pas nul");
-        }
-
-        if (adapter == null) {
-            Log.v("TAG", "adapter est nul");
-        } else {
-            Log.v("TAG", "adapter pas nul");
-        }
-
         lv.setAdapter(adapter);
 
         /*

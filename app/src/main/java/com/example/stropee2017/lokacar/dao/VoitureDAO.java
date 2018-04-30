@@ -74,7 +74,18 @@ public class VoitureDAO {
         return listVoitures;
     }
 
-    public Voiture buildVoiture (Cursor c){
+    public Voiture findVoitureById(long id) {
+
+        Voiture voiture = null;
+
+        SQLiteDatabase db = helper.getReadableDatabase();
+
+        Cursor c = db.query(VoitureContract.TABLE_NAME, null, VoitureContract.COL_ID_VOITURE + "=?", new String[]{String.valueOf(id)}, null, null, null);
+
+        return voiture;
+    }
+
+    public Voiture buildVoiture(Cursor c) {
 
         //création d'un nouvel objet
         Voiture voiture = new Voiture();
