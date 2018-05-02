@@ -27,7 +27,7 @@ public class AddVoitureActivity extends AppCompatActivity {
     private int idVoiture;
     private Voiture nouvelleVoiture;
     private VoitureDAO voitureDAO;
-    private EditText editMarque;
+    private Spinner editMarque;
     private EditText editModele;
     private EditText editImmat;
     private EditText editAnnee;
@@ -41,7 +41,7 @@ public class AddVoitureActivity extends AppCompatActivity {
     private EditText editTarif;
     private EditText editAgence;
 
-    Spinner spinner ;
+    private Spinner spinner;
 
 
     @Override
@@ -49,7 +49,7 @@ public class AddVoitureActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_voiture);
 
-        editMarque = (EditText) findViewById(R.id.idEditMarque);
+        editMarque = (Spinner) findViewById(R.id.editMarque);
         editModele = (EditText) findViewById(R.id.idEditModele);
         editImmat = (EditText) findViewById(R.id.idEditImmat);
         editAnnee = (EditText) findViewById(R.id.idEditAnnee);
@@ -66,23 +66,25 @@ public class AddVoitureActivity extends AppCompatActivity {
         String agence = ((Agence) this.getApplication()).getVille();
         editAgence.setText(agence);
 
-        spinner = (Spinner) findViewById(R.id.spinner);
+        //spinner = (Spinner) findViewById(R.id.editMarque);
         List list = new ArrayList();
         list.add("Toyota");
         list.add("Porsche");
+        list.add("Smart");
 
-        ArrayAdapter adapter = new ArrayAdapter(this, R.layout.activity_add_voiture, list);
+        ArrayAdapter adapter = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, list);
 
         adapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
 
-        spinner.setAdapter(adapter);
+        editMarque.setAdapter(adapter);
 
     }
 
-    /*
-    public void onClickAjouterVoiture(View view) {
 
-        String marque = editMarque.getText().toString();
+    public void onClickAjouterVoiture(View view) {
+/*
+
+        String marque = editMarque.().toString();
         String modele = editModele.getText().toString();
         String immat = editImmat.getText().toString();
         String annee = editAnnee.getText().toString();
@@ -92,21 +94,22 @@ public class AddVoitureActivity extends AppCompatActivity {
         int puissance = Integer.parseInt(editPuissance.getText().toString());
         int portes = Integer.parseInt(editPorte.getText().toString());
         String style = editStyle.getText().toString();
-        //boolean dispo = editDispo.getCheckedRadioButtonId();
-        String etatVoiture = editEtat.getCheckedRadioButtonId().toString();
+        int dispo = editDispo.getCheckedRadioButtonId();
+        int etatVoiture = editEtat.getCheckedRadioButtonId();
         int tarif = Integer.parseInt(editTarif.getText().toString());
 
-        nouvelleVoiture = new Voiture(tarif, puissance, portes, marque, modele, etatVoiture, immat, couleur, carburant, style, dispo, annee);
+        //nouvelleVoiture = new Voiture(tarif, puissance, portes, marque, modele, etatVoiture, immat, couleur, carburant, style, dispo, annee);
         nouvelleVoiture.setIdAgence(((Agence) this.getApplication()).getIdAgence());
         Log.v("TAG", "voiture :"+nouvelleVoiture);
         voitureDAO = new VoitureDAO(AddVoitureActivity.this);
         long id = voitureDAO.insert(nouvelleVoiture);
         nouvelleVoiture.setId(id);
 
+*/
         finish();
 
     }
-    */
+
 
     private class insert {
 

@@ -115,7 +115,7 @@ public class VoitureDAO {
         voiture.setImmat(c.getString(c.getColumnIndex(VoitureContract.COL_IMMAT)));
         voiture.setCouleur(c.getString(c.getColumnIndex(VoitureContract.COL_COULEUR)));
         voiture.setStyle(c.getString(c.getColumnIndex(VoitureContract.COL_STYLE)));
-      //  voiture.setDispo(c.getString(c.getColumnIndex(VoitureContract.COL_DISPO)));
+        //voiture.setDispo(c.getString(c.getColumnIndex(VoitureContract.COL_DISPO)));
         voiture.setAnnee(c.getString(c.getColumnIndex(VoitureContract.COL_ANNEE)));
         voiture.setIdAgence(c.getColumnIndex(VoitureContract.COL_ID_AGENCE));
 
