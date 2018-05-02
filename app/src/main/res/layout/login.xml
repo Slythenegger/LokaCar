@@ -1,41 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android = "http://schemas.android.com/apk/res/android"
+    xmlns:tools = "http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height = "match_parent"
+    android:paddingLeft= "@dimen/fab_margin"
+    android:paddingRight = "@dimen/fab_margin"
+    android:paddingTop = "@dimen/fab_margin"
+    android:paddingBottom = "@dimen/fab_margin"
+    tools:context = ".LoginActivity">
 
-    <LinearLayout
+    <TextView
+        android:text = "Bienvenu!"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <EditText
-            android:id = "@+id/textPassword"
-            android:layout_width = "wrap_content"
-            android:layout_height = "wrap_content"
-            android:inputType = "textPassword" />
+        android:layout_height = "wrap_content"
+        android:id = "@+id/textview"
+        android:textSize = "35dp"
+        android:layout_alignParentTop = "true"
+        android:layout_centerHorizontal = "true"
+      />
 
-        <EditText
-            android:id = "@+id/textUsername"
-            android:layout_width = "wrap_content"
-            android:layout_height = "wrap_content"
-            />
 
-        <Button
-            android:id = "@+id/buttonLogin"
-            android:layout_width = "wrap_content"
-            android:layout_height = "wrap_content"
 
-            android:text = "Login"
-            />
-        <Button
-            android:id = "@+id/buttonCancel"
-            android:layout_width = "wrap_content"
-            android:layout_height = "wrap_content"
-            android:onClick = "cancel"
-            android:text = "Cancel"
-            />
-        <TextView
-            android:id="@+id/nombreAttentat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+    <EditText
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:id = "@+id/textUsername"
+        android:hint = "Username"
+        android:focusable = "true"
+        android:textColorHighlight = "#ff7eff15"
+        android:textColorHint = "#ffff25e6"
+        android:layout_marginTop = "46dp"
+        android:layout_below = "@+id/imageView"
+        android:layout_alignParentLeft = "true"
+        android:layout_alignParentStart = "true"
+        android:layout_alignParentRight = "true"
+        android:layout_alignParentEnd = "true" />
 
-</LinearLayout>
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="1000dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/textview"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/camaro" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/textPassword"
+        android:layout_below="@+id/textUsername"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/textUsername"
+        android:layout_alignEnd="@+id/textUsername"
+        android:textColorHint="#ffff299f"
+        android:hint="Password" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Essaies restant:"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/textPassword"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/nombreAttentat"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_toEndOf="@+id/textview"
+        android:text="3"
+        android:textSize="25dp"
+        android:layout_toRightOf="@+id/textview"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="login"
+        android:id="@+id/buttonLogin"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/textview"
+        android:layout_toStartOf="@+id/textview" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:id="@+id/buttonCancel"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/textview"
+        android:layout_toEndOf="@+id/textview" />
+
+</RelativeLayout>

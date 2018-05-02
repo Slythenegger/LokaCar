@@ -12,6 +12,18 @@ public class Agence extends Application {
     public Agence() {
     }
 
+    public Agence( String nomGerant, String prenomGerant, String adresse, String codePostal, String ville, String telephone, String password, float chiffreDAffaire) {
+
+        this.nomGerant = nomGerant;
+        this.prenomGerant = prenomGerant;
+        this.adresse = adresse;
+        this.codePostal = codePostal;
+        this.ville = ville;
+        this.telephone = telephone;
+        this.password = password;
+        this.chiffreDAffaire = chiffreDAffaire;
+    }
+
     public Agence(long idAgence, String nomGerant, String prenomGerant, String adresse, String codePostal, String ville, String telephone, String password, float chiffreDAffaire) {
         this.idAgence = idAgence;
         this.nomGerant = nomGerant;
