@@ -40,7 +40,7 @@ public class LocationEnCoursActivity extends AppCompatActivity {
 
             Log.i("TAG_ID_LOC_EN_COURS", String.valueOf(idLocation));
 
-            Location location = dao.findLocationById(idLocation);
+            location = dao.findLocationById(idLocation);
 
             tv = findViewById(R.id.txtNbJourLocEnCours);
             float nbJours = (float) (location.getFinLocation().getTime() - location.getDebutLocation().getTime()) / (24 * 60 * 60 * 1000);
@@ -54,10 +54,7 @@ public class LocationEnCoursActivity extends AppCompatActivity {
             android.text.format.DateFormat df = new android.text.format.DateFormat();
             String date = (String) df.format("dd-MM-yyyy", location.getFinLocation());
             tv.setText(date);
-
-
         }
-
 
     }
 
@@ -66,6 +63,16 @@ public class LocationEnCoursActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AccueilActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
+
+    }
+
+    public void finishLocation(View view) {
+
+        location.setEnCours(false);
+        LocationDAO dao = new LocationDAO(this);
+        dao.insertOrUpdate(location);
+        backAccueil(view);
+
 
     }
 }

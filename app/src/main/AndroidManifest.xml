@@ -17,19 +17,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".ClientActivity" />
         <activity android:name=".AddVoitureActivity" />
         <activity android:name=".AddClientActivity" />
         <activity android:name=".DetailClientActivity" />
-        <activity android:name=".AccueilActivity"/>
-
-
+        <activity android:name=".AccueilActivity" />
         <activity android:name=".VoitureActivity" />
         <activity android:name=".DetailVoitureActivity" />
         <activity android:name=".LocationActivity" />
-
-        <activity android:name=".LocationEnCoursActivity"></activity>
+        <activity android:name=".LocationEnCoursActivity" />
+        <activity android:name=".ListeLocEnCoursActivity"></activity>
     </application>
 
 </manifest>

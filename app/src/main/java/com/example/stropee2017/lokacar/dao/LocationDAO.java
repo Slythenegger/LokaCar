@@ -10,6 +10,7 @@ import com.example.stropee2017.lokacar.beans.Location;
 import com.example.stropee2017.lokacar.beans.Voiture;
 import com.example.stropee2017.lokacar.dao.contract.LocationContract;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -17,7 +18,7 @@ public class LocationDAO {
 
     private Context context;
     private BddHelper helper;
-    private List<Location> liste;
+    private List<Location> listeLocation;
 
 
     public LocationDAO(Context context) {
@@ -25,21 +26,39 @@ public class LocationDAO {
         this.helper = new BddHelper(context);
     }
 
-    public long insert(Location location) {
+    public long insertOrUpdate(Location location) {
 
-        long id = 0;
+        long id;
         SQLiteDatabase db = helper.getWritableDatabase();
+        if (location.getIdLocation() <= 0) {
 
-        ContentValues c = new ContentValues();
+            ContentValues c = new ContentValues();
 
-        c.put(LocationContract.COL_ID_CLIENT, location.getClient().getIdClient());
-        c.put(LocationContract.COL_ID_VOITURE, location.getVoiture().getId());
-        c.put(LocationContract.COL_DATE_DEBUT_LOCATION, String.valueOf(location.getDebutLocation()));
-        c.put(LocationContract.COL_DATE_FIN_LOCATION, String.valueOf(location.getFinLocation()));
-        c.put(LocationContract.COL_PRIX_LOCATION, location.getPrixLocation());
-        c.put(LocationContract.COL_ETAT_LOCATION, location.isEnCours());
+            c.put(LocationContract.COL_ID_CLIENT, location.getClient().getIdClient());
+            c.put(LocationContract.COL_ID_VOITURE, location.getVoiture().getId());
+            c.put(LocationContract.COL_DATE_DEBUT_LOCATION, String.valueOf(location.getDebutLocation()));
+            c.put(LocationContract.COL_DATE_FIN_LOCATION, String.valueOf(location.getFinLocation()));
+            c.put(LocationContract.COL_PRIX_LOCATION, location.getPrixLocation());
+            c.put(LocationContract.COL_ETAT_LOCATION, location.isEnCours());
 
-        id = db.insert(LocationContract.TABLE_NAME, null, c);
+            id = db.insert(LocationContract.TABLE_NAME, null, c);
+
+        } else {
+
+            id = location.getIdLocation();
+
+            ContentValues c = new ContentValues();
+
+            c.put(LocationContract.COL_ID_CLIENT, location.getClient().getIdClient());
+            c.put(LocationContract.COL_ID_VOITURE, location.getVoiture().getId());
+            c.put(LocationContract.COL_DATE_DEBUT_LOCATION, String.valueOf(location.getDebutLocation()));
+            c.put(LocationContract.COL_DATE_FIN_LOCATION, String.valueOf(location.getFinLocation()));
+            c.put(LocationContract.COL_PRIX_LOCATION, location.getPrixLocation());
+            c.put(LocationContract.COL_ETAT_LOCATION, location.isEnCours());
+
+            db.update(LocationContract.TABLE_NAME, c, LocationContract.COL_ID_LOCATION + "=?", new String[]{String.valueOf(id)});
+
+        }
 
         return id;
     }
@@ -60,6 +79,25 @@ public class LocationDAO {
 
         return location;
     }
+
+    public List<Location> getListeLocation() {
+
+        listeLocation = new ArrayList<>();
+        SQLiteDatabase db = helper.getReadableDatabase();
+
+        Cursor c = db.query(LocationContract.TABLE_NAME, null, LocationContract.COL_ETAT_LOCATION + "=?", new String[]{"1"}, null, null, null);
+
+        if (c != null && c.moveToFirst()) {
+
+            do {
+                Location location = locationBuilder(c);
+                listeLocation.add(location);
+
+            } while (c.moveToNext());
+        }
+        return listeLocation;
+    }
+
 
     public Location locationBuilder(Cursor c) {
 

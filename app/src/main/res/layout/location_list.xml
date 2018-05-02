@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp">
+
+    <LinearLayout
+        android:id="@+id/locIdFirst"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtNomListLocEnCours"
+            style="@style/TextAppearance.AppCompat.Large"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="NOM" />
+
+
+        <TextView
+            android:id="@+id/txtPrenomListLocEnCours"
+            style="@style/TextAppearance.AppCompat.Large"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="PRENOM" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/locIdSecond"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/locIdFirst">
+
+        <TextView
+            android:id="@+id/txtMarqueListLocEnCours"
+            style="@style/TextAppearance.AppCompat.Large"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:text="MARQUE" />
+
+
+        <TextView
+            android:id="@+id/txtModeleListLocEnCours"
+            style="@style/TextAppearance.AppCompat.Large"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:text="MODELE" />
+
+        <TextView
+            android:id="@+id/txtImmatListLocEnCours"
+            style="@style/TextAppearance.AppCompat.Large"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:text="IMMAT" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/locIdThird"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/locIdSecond">
+
+
+        <TextView
+            android:id="@+id/txtRetourListLocEnCours"
+            style="@style/TextAppearance.AppCompat.Large"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="Retour prévu le :" />
+
+
+        <TextView
+            android:id="@+id/txtRetourPrevuListLocEnCours"
+            style="@style/TextAppearance.AppCompat.Large"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="JJ/MM/YYY" />
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

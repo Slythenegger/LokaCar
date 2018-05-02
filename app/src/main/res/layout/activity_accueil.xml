@@ -10,10 +10,22 @@
     <Button
         android:id="@+id/btnNewLocation"
         android:layout_width="match_parent"
-        android:layout_height="159dp"
+        android:layout_height="200dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="14dp"
+        android:onClick="newLocation"
         android:text="Nouvelle Location"
-        android:onClick="newLocation"/>
+        android:layout_alignParentLeft="true" />
+
+    <Button
+        android:id="@+id/btnLocEnCours"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/btnNewLocation"
+        android:text="Locations en Cours"
+        android:layout_alignParentLeft="true"
+        android:onClick="getLocEnCours"/>
+
 </RelativeLayout>

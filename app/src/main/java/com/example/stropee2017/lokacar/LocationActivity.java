@@ -79,7 +79,6 @@ public class LocationActivity extends AppCompatActivity {
             location.setVoiture(voiture);
             location.setClient(client);
 
-
             String debutLoc = etDepart.getText().toString();
             String[] tabDateDebut = debutLoc.split("/");
             String newDateDebut = tabDateDebut[1] + "/" + tabDateDebut[0] + "/" + tabDateDebut[2];
@@ -97,7 +96,7 @@ public class LocationActivity extends AppCompatActivity {
             int nb = (int) nbJours;
             location.setPrixLocation(nb * location.getVoiture().getTarif());
 
-            location.setIdLocation(dao.insert(location));
+            location.setIdLocation(dao.insertOrUpdate(location));
 
             Intent intent = new Intent(this, LocationEnCoursActivity.class);
             intent.putExtra("idLocation", location.getIdLocation());

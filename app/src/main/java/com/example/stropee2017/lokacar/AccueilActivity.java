@@ -50,4 +50,10 @@ public class AccueilActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+    public void getLocEnCours(View view) {
+
+        Intent intent = new Intent(this, ListeLocEnCoursActivity.class);
+        startActivity(intent);
+    }
 }
