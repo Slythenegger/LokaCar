@@ -59,7 +59,8 @@ public class VoitureDAO {
         SQLiteDatabase db = helper.getReadableDatabase();
 
         //select * from
-        Cursor c = db.query(VoitureContract.TABLE_NAME, null, VoitureContract.COL_ID_AGENCE+"=?", new String[]{String.valueOf(id)}, null, null, null);
+        Cursor c = db.query(VoitureContract.TABLE_NAME, null, VoitureContract.COL_ID_AGENCE + "=?",
+                new String[]{String.valueOf(id)}, null, null, null);
 
         if (c != null && c.moveToFirst()) {
             do {
@@ -76,20 +77,30 @@ public class VoitureDAO {
         return listVoitures;
     }
 
+    //trouver la voiture par son id
     public Voiture findVoitureById(long id) {
 
         Voiture voiture = null;
 
         SQLiteDatabase db = helper.getReadableDatabase();
 
-        Cursor c = db.query(VoitureContract.TABLE_NAME, null, VoitureContract.COL_ID_VOITURE + "=?", new String[]{String.valueOf(id)}, null, null, null);
+        //création d'un curseur qui va se mettre sur la ligne sélectionnée
+        Cursor c = db.query(VoitureContract.TABLE_NAME, null, VoitureContract.COL_ID_VOITURE + "=?",
+                new String[]{String.valueOf(id)}, null, null, null);
+
+        //curseur qui part [toujours] de -1. Si le curseur existe et qu'il peut aller à la première ligne (donc il y a bien une table qui existe)
+        if (c != null && c.moveToFirst()) {
+            //je construis mon objet voiture avec la fonction créee avec en paramètre mon curseur qui est positionné sur la ligne sélectionnée
+            voiture = buildVoiture(c);
+        }
+
 
         return voiture;
     }
 
+    //récupération d'une ligne de voiture
     public Voiture buildVoiture(Cursor c) {
 
-        //création d'un nouvel objet
         Voiture voiture = new Voiture();
 
         //affecte un id à l'objet dans la colonne idVoiture de la table Voiture

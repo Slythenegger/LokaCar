@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import com.example.stropee2017.lokacar.beans.Agence;
@@ -38,11 +39,11 @@ public class DetailVoitureActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
 
-        TextView tv ;
+        TextView tv;
         Intent intent = getIntent();
         VoitureDAO dao = new VoitureDAO(this);
 
-        if(intent!=null){
+        if (intent != null) {
 
             long id = intent.getLongExtra("id", 0);
             voiture = dao.findVoitureById(id);
@@ -61,24 +62,24 @@ public class DetailVoitureActivity extends AppCompatActivity {
             textEtat = (TextView) findViewById(R.id.recupEtat);
             textAgence = (TextView) findViewById(R.id.recupAgence);
 
+
             textMarque.setText(voiture.getMarque());
             textModele.setText(voiture.getModele());
             textImmat.setText(voiture.getImmat());
             textAnnee.setText(voiture.getAnnee());
-            textPuissance.setText(voiture.getPuissance());
-            textPortes.setText(voiture.getPortes());
+            textPuissance.setText(String.valueOf((voiture.getPuissance())));
+            textPortes.setText(String.valueOf(voiture.getPortes()));
             textCarburant.setText(voiture.getCarburant());
             textCouleur.setText(voiture.getCouleur());
             textStyle.setText(voiture.getStyle());
             textDispo.setText(voiture.getDispo());
-            textTarif.setText(voiture.getTarif());
+            textTarif.setText(String.valueOf(voiture.getTarif()));
             textEtat.setText(voiture.getEtatVoiture());
             //récupérer le nom de l'agence lié à son id ;
             textAgence.setText(((Agence) this.getApplication()).getVille());
 
 
         }
-
 
 
         super.onResume();

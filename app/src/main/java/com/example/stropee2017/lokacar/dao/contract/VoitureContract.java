@@ -33,7 +33,7 @@ public abstract class VoitureContract {
             + COL_COULEUR + " TEXT,"
             + COL_CARBURANT + " TEXT,"
             + COL_STYLE + " TEXT,"
-            + COL_DISPO + " TEXT,"
+            + COL_DISPO + " INTEGER,"
             + COL_ANNEE + " TEXT,"
             + COL_AGENCE+ "TEXT,"
             + "FOREIGN KEY (" + COL_ID_AGENCE + ") REFERENCES " + AgenceContract.TABLE_NAME + "(" + AgenceContract.COL_ID_AGENCE + "))";

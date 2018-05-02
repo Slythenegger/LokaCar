@@ -18,6 +18,11 @@
     <string name="txtCV">CV</string>
     <string name="btnAjoutVoiture">Valider</string>
     <string name="txtAgence">Agence : </string>
+    <string name="txtDispoOui">Oui</string>
+    <string name="txtDispoNon">Non</string>
+    <string name="txtEtatBon">Bon</string>
+    <string name="txtEtatMoyen">Moyen</string>
+    <string name="txtEtatMauvais">Mauvais</string>
     <string name="title_activity_voiture_activity">voiture_activity</string>
     <string name="title_activity_voiture">VoitureActivity</string>
 </resources>

@@ -43,7 +43,7 @@ public class VoitureActivity extends AppCompatActivity {
 
         lv.setAdapter(adapter);
 
-        /*
+
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -53,7 +53,7 @@ public class VoitureActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        */
+
 
         lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override

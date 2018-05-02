@@ -9,13 +9,14 @@ public class Voiture implements Parcelable {
 
     private long id, idAgence;
     private int tarif, puissance, portes;
-    private String marque, modele, etatVoiture, immat, couleur, carburant, style, dispo, annee;
+    private String marque, modele, etatVoiture, immat, couleur, carburant, style, annee;
+    private boolean dispo;
     private List<String> listPhotos;
 
     public Voiture() {
     }
 
-    public Voiture(int tarif, int puissance, int portes, String marque, String modele, String etatVoiture, String immat, String couleur, String carburant, String style, String dispo, String annee) {
+    public Voiture(int tarif, int puissance, int portes, String marque, String modele, String etatVoiture, String immat, String couleur, String carburant, String style, boolean dispo, String annee) {
         this.tarif = tarif;
         this.puissance = puissance;
         this.portes = portes;
@@ -28,39 +29,6 @@ public class Voiture implements Parcelable {
         this.style = style;
         this.dispo = dispo;
         this.annee = annee;
-    }
-
-    public Voiture(int tarif, int puissance, int portes, String marque, String modele, String etatVoiture, String immat, String couleur, String carburant, String style, String dispo, String annee, List<String> listPhotos) {
-        this.tarif = tarif;
-        this.puissance = puissance;
-        this.portes = portes;
-        this.marque = marque;
-        this.modele = modele;
-        this.etatVoiture = etatVoiture;
-        this.immat = immat;
-        this.couleur = couleur;
-        this.carburant = carburant;
-        this.style = style;
-        this.dispo = dispo;
-        this.annee = annee;
-        this.listPhotos = listPhotos;
-    }
-
-    public Voiture(long idAgence, int tarif, int puissance, int portes, String marque, String modele, String etatVoiture, String immat, String couleur, String carburant, String style, String dispo, String annee, List<String> listPhotos) {
-        this.idAgence = idAgence;
-        this.tarif = tarif;
-        this.puissance = puissance;
-        this.portes = portes;
-        this.marque = marque;
-        this.modele = modele;
-        this.etatVoiture = etatVoiture;
-        this.immat = immat;
-        this.couleur = couleur;
-        this.carburant = carburant;
-        this.style = style;
-        this.dispo = dispo;
-        this.annee = annee;
-        this.listPhotos = listPhotos;
     }
 
     protected Voiture(Parcel in) {
@@ -76,8 +44,8 @@ public class Voiture implements Parcelable {
         couleur = in.readString();
         carburant = in.readString();
         style = in.readString();
-        dispo = in.readString();
         annee = in.readString();
+        dispo = in.readByte() != 0;
         listPhotos = in.createStringArrayList();
     }
 
@@ -189,11 +157,11 @@ public class Voiture implements Parcelable {
         this.style = style;
     }
 
-    public String getDispo() {
+    public boolean getDispo() {
         return dispo;
     }
 
-    public void setDispo(String dispo) {
+    public void setDispo(boolean dispo) {
         this.dispo = dispo;
     }
 
@@ -254,8 +222,8 @@ public class Voiture implements Parcelable {
         dest.writeString(couleur);
         dest.writeString(carburant);
         dest.writeString(style);
-        dest.writeString(dispo);
         dest.writeString(annee);
+        dest.writeByte((byte) (dispo ? 1 : 0));
         dest.writeStringList(listPhotos);
     }
 }

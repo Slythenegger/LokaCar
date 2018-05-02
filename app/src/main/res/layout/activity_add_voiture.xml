@@ -1,54 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="5dp"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
+    android:padding="5dp"
     tools:context=".AddVoitureActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
+            android:orientation="horizontal">
 
 
             <TextView
                 android:id="@+id/idMarque"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txtMarque"
-                />
+                android:text="@string/txtMarque" />
 
             <EditText
                 android:id="@+id/idEditMarque"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.25"
-                android:inputType="text"
-                />
+                android:inputType="text" />
 
             <TextView
                 android:id="@+id/idModele"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txtModele"
-                />
+                android:text="@string/txtModele" />
 
             <EditText
                 android:id="@+id/idEditModele"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.25"
-                android:inputType="text"
-                />
+                android:inputType="text" />
         </LinearLayout>
 
         <LinearLayout
@@ -59,30 +53,26 @@
                 android:id="@+id/idImmat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txtImmat"
-                />
+                android:text="@string/txtImmat" />
 
             <EditText
                 android:id="@+id/idEditImmat"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.25"
-                android:inputType="text"
-                />
+                android:inputType="text" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txtAnnee"
-                />
+                android:text="@string/txtAnnee" />
 
             <EditText
                 android:id="@+id/idEditAnnee"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.25"
-                android:inputType="number"
-                />
+                android:inputType="number" />
 
         </LinearLayout>
 
@@ -94,29 +84,25 @@
                 android:id="@+id/idCouleur"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txtCouleur"
-                />
+                android:text="@string/txtCouleur" />
 
             <EditText
                 android:id="@+id/idEditCouleur"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.25"
-                />
+                android:layout_weight="0.25" />
 
             <TextView
                 android:id="@+id/idCarburant"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txtCarburant"
-                />
+                android:text="@string/txtCarburant" />
 
             <EditText
                 android:id="@+id/idEditCarburant"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.25"
-                />
+                android:layout_weight="0.25" />
 
         </LinearLayout>
 
@@ -128,31 +114,27 @@
                 android:id="@+id/idPuissance"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txtPuissance"
-                />
+                android:text="@string/txtPuissance" />
 
             <EditText
                 android:id="@+id/idEditPuissance"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.25"
-                android:inputType="number"
-                />
+                android:inputType="number" />
 
             <TextView
                 android:id="@+id/idPortes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txtPorte"
-                />
+                android:text="@string/txtPorte" />
 
             <EditText
                 android:id="@+id/idEditPortes"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.25"
-                android:inputType="number"
-                />
+                android:inputType="number" />
 
         </LinearLayout>
 
@@ -164,29 +146,41 @@
                 android:id="@+id/idStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txtStyle"
-                />
+                android:text="@string/txtStyle" />
 
             <EditText
                 android:id="@+id/idEditStyle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.25"
-                />
+                android:layout_weight="0.25" />
 
             <TextView
                 android:id="@+id/idDispo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txtDispo"
-                />
+                android:text="@string/txtDispo" />
 
-            <EditText
-                android:id="@+id/idEditDispo"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.25"
-                />
+            <RadioGroup
+                android:id="@+id/radioGroupDispo"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioButtonOui"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Oui" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonNon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Non" />
+
+            </RadioGroup>
+
 
         </LinearLayout>
 
@@ -197,21 +191,18 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txtTarif"
-                />
+                android:text="@string/txtTarif" />
 
             <EditText
                 android:id="@+id/idEditTarif"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                />
+                android:inputType="number" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/txtEuro"
-                />
+                android:text="@string/txtEuro" />
 
         </LinearLayout>
 
@@ -222,14 +213,35 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txtEtat"
-                />
+                android:text="@string/txtEtat" />
 
-            <EditText
-                android:id="@+id/idEditEtat"
-                android:layout_width="70dp"
-                android:layout_height="wrap_content"
-                />
+            <RadioGroup
+                android:id="@+id/radioGroupEtat"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioButtonBon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txtEtatBon" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonMoyen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txtEtatMoyen"
+                    />
+
+                <RadioButton
+                    android:id="@+id/radioButtonMauvais"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txtEtatMauvais" />
+
+            </RadioGroup>
 
         </LinearLayout>
 
@@ -240,14 +252,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txtAgence"
-                />
+                android:text="@string/txtAgence" />
 
             <EditText
                 android:id="@+id/txtAgence"
                 android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                />
+                android:layout_height="wrap_content" />
 
         </LinearLayout>
 
@@ -265,6 +275,12 @@
 
         </LinearLayout>
 
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </Spinner>
 
 
     </LinearLayout>
