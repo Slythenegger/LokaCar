@@ -26,6 +26,7 @@ public class DetailVoitureActivity extends AppCompatActivity {
     private TextView textTarif;
     private TextView textEtat;
     private TextView textAgence;
+    private String estDispo;
 
     Voiture voiture;
 
@@ -72,7 +73,9 @@ public class DetailVoitureActivity extends AppCompatActivity {
             textCarburant.setText(voiture.getCarburant());
             textCouleur.setText(voiture.getCouleur());
             textStyle.setText(voiture.getStyle());
-           // textDispo.setText(voiture.getDispo());
+            //si c'est égal à 1, il doit marquer "oui" sinon "non"
+            estDispo = (voiture.getDispo() == true) ? "Oui" : "Non";
+            textDispo.setText(estDispo);
             textTarif.setText(String.valueOf(voiture.getTarif()));
             textEtat.setText(voiture.getEtatVoiture());
             //récupérer le nom de l'agence lié à son id ;

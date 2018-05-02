@@ -174,13 +174,13 @@
                     android:id="@+id/radioButtonOui"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Oui" />
+                    android:text="@string/txtDispoOui" />
 
                 <RadioButton
                     android:id="@+id/radioButtonNon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Non" />
+                    android:text="@string/txtDispoNon" />
 
             </RadioGroup>
 
@@ -269,7 +269,7 @@
             android:layout_height="wrap_content">
 
             <Button
-                android:id="@+id/validerVoiture"
+                android:id="@+id/btnAjouterVoiture"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#de3c41"
