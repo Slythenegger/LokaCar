@@ -98,4 +98,14 @@
         android:layout_marginBottom="94dp"
         android:text="Terminer la location" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="27dp"
+        android:text="Retour Accueil"
+        android:onClick="backAccueil"/>
+
+
 </RelativeLayout>

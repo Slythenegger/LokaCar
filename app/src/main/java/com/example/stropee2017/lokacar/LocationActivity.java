@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.stropee2017.lokacar.beans.Client;
 import com.example.stropee2017.lokacar.beans.Location;
@@ -20,7 +21,7 @@ public class LocationActivity extends AppCompatActivity {
     TextView tv;
     Client client;
     Voiture voiture;
-    EditText et;
+    EditText etDepart, etRetour;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,40 +65,44 @@ public class LocationActivity extends AppCompatActivity {
     public void addNewLocation(View view) {
 
         LocationDAO dao = new LocationDAO(this);
-
         Location location = new Location();
 
-        location.setVoiture(voiture);
-        location.setClient(client);
+        etDepart = (EditText) findViewById(R.id.dateDepart);
+        etRetour = (EditText) findViewById(R.id.dateRetour);
 
-        et = (EditText) findViewById(R.id.dateDepart);
-        String debutLoc = et.getText().toString();
-        String[] tabDateDebut = debutLoc.split("/");
-        String newDateDebut = tabDateDebut[1] + "/" + tabDateDebut[0] + "/" + tabDateDebut[2];
-        location.setDebutLocation(new Date(newDateDebut));
-        Log.i("TAG_debut", location.getDebutLocation().toString());
+        if (client == null || voiture == null || etDepart.getText().toString().equals("") || etRetour.getText().toString().equals("")) {
 
-        et = (EditText) findViewById(R.id.dateRetour);
-        String retourLoc = et.getText().toString();
-        String[] tabDateRetour = retourLoc.split("/");
-        String newDateRetour = tabDateRetour[1] + "/" + tabDateRetour[0] + "/" + tabDateRetour[2];
-        location.setFinLocation(new Date(newDateRetour));
-        Log.i("TAG-fin", location.getFinLocation().toString());
+            Toast.makeText(this, "Veuillez remplir correctement tous les champs demandés", Toast.LENGTH_LONG).show();
 
-        location.setEnCours(true);
+        } else {
 
-        float nbJours = (location.getFinLocation().getTime() - location.getDebutLocation().getTime()) / (24 * 60 * 60 * 1000);
-        int nb = (int) nbJours;
-        location.setPrixLocation(nb * location.getVoiture().getTarif());
+            location.setVoiture(voiture);
+            location.setClient(client);
 
-        location.setIdLocation(dao.insert(location));
 
-        Intent intent = new Intent(this, LocationEnCoursActivity.class);
-        intent.putExtra("idLocation", location.getIdLocation());
-        Log.i("TAG_ID_LOCATION", String.valueOf(location.getIdLocation()));
-        intent.putExtra("location", location);
-        Log.i("TAG_LOCATION", location.toString());
-        startActivity(intent);
+            String debutLoc = etDepart.getText().toString();
+            String[] tabDateDebut = debutLoc.split("/");
+            String newDateDebut = tabDateDebut[1] + "/" + tabDateDebut[0] + "/" + tabDateDebut[2];
+            location.setDebutLocation(new Date(newDateDebut));
+
+
+            String retourLoc = etRetour.getText().toString();
+            String[] tabDateRetour = retourLoc.split("/");
+            String newDateRetour = tabDateRetour[1] + "/" + tabDateRetour[0] + "/" + tabDateRetour[2];
+            location.setFinLocation(new Date(newDateRetour));
+
+            location.setEnCours(true);
+
+            float nbJours = (location.getFinLocation().getTime() - location.getDebutLocation().getTime()) / (24 * 60 * 60 * 1000);
+            int nb = (int) nbJours;
+            location.setPrixLocation(nb * location.getVoiture().getTarif());
+
+            location.setIdLocation(dao.insert(location));
+
+            Intent intent = new Intent(this, LocationEnCoursActivity.class);
+            intent.putExtra("idLocation", location.getIdLocation());
+            startActivity(intent);
+        }
 
 
     }

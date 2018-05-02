@@ -1,23 +1,24 @@
-<menu xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android" >
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:id="@+id/menuClient"
-        android:title="sms"
-        app:showAsAction="always"
+        android:icon="@android:drawable/ic_menu_my_calendar"
         android:onClick="goClientActivity"
-        android:icon="@android:drawable/ic_menu_my_calendar"/>
+        android:title="client"
+        app:showAsAction="always" />
     <item
         android:id="@+id/menuVoiture"
-        android:title="sms"
-        app:showAsAction="always"
+        android:icon="@drawable/car"
         android:onClick="goVoitureActivity"
-        android:icon="@drawable/car"/>
+        android:title="voiture"
+        app:showAsAction="always" />
     <item
         android:id="@+id/menuVue"
-        android:title="sms"
-        app:showAsAction="always"
+        android:icon="@android:drawable/ic_dialog_info"
         android:onClick="goVueActivity"
-        android:icon="@android:drawable/ic_dialog_info"/>
+        android:title="vue"
+        app:showAsAction="always" />
+
 
 </menu>
