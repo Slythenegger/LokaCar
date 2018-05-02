@@ -37,6 +37,7 @@ public class LocationDAO {
         c.put(LocationContract.COL_DATE_DEBUT_LOCATION, String.valueOf(location.getDebutLocation()));
         c.put(LocationContract.COL_DATE_FIN_LOCATION, String.valueOf(location.getFinLocation()));
         c.put(LocationContract.COL_PRIX_LOCATION, location.getPrixLocation());
+        c.put(LocationContract.COL_ETAT_LOCATION, location.isEnCours());
 
         id = db.insert(LocationContract.TABLE_NAME, null, c);
 
@@ -68,6 +69,9 @@ public class LocationDAO {
         location.setPrixLocation(c.getFloat(c.getColumnIndex(LocationContract.COL_PRIX_LOCATION)));
         location.setFinLocation(new Date(c.getString(c.getColumnIndex(LocationContract.COL_DATE_FIN_LOCATION))));
         location.setDebutLocation(new Date(c.getString(c.getColumnIndex(LocationContract.COL_DATE_DEBUT_LOCATION))));
+        int locEnCours = c.getInt(c.getColumnIndex(LocationContract.COL_ETAT_LOCATION));
+        boolean enCours = (locEnCours == 1) ? true : false;
+        location.setEnCours(enCours);
 
         long idVoiture = c.getLong(c.getColumnIndex(LocationContract.COL_ID_VOITURE));
         long idClient = c.getLong(c.getColumnIndex(LocationContract.COL_ID_CLIENT));
