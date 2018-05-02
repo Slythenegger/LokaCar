@@ -24,6 +24,7 @@
         <activity android:name=".VoitureActivity" />
         <activity android:name=".DetailVoitureActivity" />
         <activity android:name=".LocationActivity" />
+        <activity android:name=".LocationEnCoursActivity"></activity>
     </application>
 
 </manifest>

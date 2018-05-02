@@ -72,7 +72,7 @@ public class DetailVoitureActivity extends AppCompatActivity {
             textCarburant.setText(voiture.getCarburant());
             textCouleur.setText(voiture.getCouleur());
             textStyle.setText(voiture.getStyle());
-            textDispo.setText(voiture.getDispo());
+           // textDispo.setText(voiture.getDispo());
             textTarif.setText(String.valueOf(voiture.getTarif()));
             textEtat.setText(voiture.getEtatVoiture());
             //récupérer le nom de l'agence lié à son id ;

@@ -11,6 +11,7 @@ public abstract class LocationContract {
     public static final String COL_DATE_DEBUT_LOCATION = "DATE_DEBUT_LOCATION";
     public static final String COL_DATE_FIN_LOCATION = "DATE_FIN_LOCATION";
     public static final String COL_PRIX_LOCATION = "PRIX_LOCATION";
+    public static final String COL_ETAT_LOCATION = "ETAT_LOCATION";
 
 
     public static final String SQL_CREATE_TABLE = "CREATE TABLE IF NOT EXISTS "
@@ -21,6 +22,7 @@ public abstract class LocationContract {
             + COL_DATE_DEBUT_LOCATION + " TEXT,"
             + COL_DATE_FIN_LOCATION + " TEXT,"
             + COL_PRIX_LOCATION + " REAL,"
+            + COL_ETAT_LOCATION + " INTEGER,"
             + "FOREIGN KEY (" + COL_ID_VOITURE + ") REFERENCES " + VoitureContract.TABLE_NAME + "(" + VoitureContract.COL_ID_VOITURE+"),"
             + "FOREIGN KEY (" + COL_ID_CLIENT + ") REFERENCES " + ClientContract.TABLE_NAME + "(" + ClientContract.COL_ID_CLIENT + "))";
 

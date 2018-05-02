@@ -1,9 +1,12 @@
 package com.example.stropee2017.lokacar.beans;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.Date;
 import java.util.List;
 
-public class Location {
+public class Location implements Parcelable {
 
     private long idLocation;
     private Date debutLocation, finLocation;
@@ -11,6 +14,7 @@ public class Location {
     private Client client;
     private Voiture voiture;
     private List<String> etatDepart, etatRetour;
+    private boolean enCours;
 
     public Location() {
     }
@@ -23,6 +27,52 @@ public class Location {
         this.voiture = voiture;
         this.etatDepart = etatDepart;
         this.etatRetour = etatRetour;
+    }
+
+    protected Location(Parcel in) {
+        idLocation = in.readLong();
+        prixLocation = in.readFloat();
+        client = in.readParcelable(Client.class.getClassLoader());
+        voiture = in.readParcelable(Voiture.class.getClassLoader());
+        etatDepart = in.createStringArrayList();
+        etatRetour = in.createStringArrayList();
+        enCours = in.readByte() != 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeLong(idLocation);
+        dest.writeFloat(prixLocation);
+        dest.writeParcelable(client, flags);
+        dest.writeParcelable(voiture, flags);
+        dest.writeStringList(etatDepart);
+        dest.writeStringList(etatRetour);
+        dest.writeByte((byte) (enCours ? 1 : 0));
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<Location> CREATOR = new Creator<Location>() {
+        @Override
+        public Location createFromParcel(Parcel in) {
+            return new Location(in);
+        }
+
+        @Override
+        public Location[] newArray(int size) {
+            return new Location[size];
+        }
+    };
+
+    public boolean isEnCours() {
+        return enCours;
+    }
+
+    public void setEnCours(boolean enCours) {
+        this.enCours = enCours;
     }
 
     public long getIdLocation() {
@@ -96,8 +146,8 @@ public class Location {
                 ", debutLocation=" + debutLocation +
                 ", finLocation=" + finLocation +
                 ", prixLocation=" + prixLocation +
-                ", client=" + client +
-                ", voiture=" + voiture +
+                ", client=" + client.toString() +
+                ", voiture=" + voiture.toString() +
                 ", etatDepart=" + etatDepart +
                 ", etatRetour=" + etatRetour +
                 '}';

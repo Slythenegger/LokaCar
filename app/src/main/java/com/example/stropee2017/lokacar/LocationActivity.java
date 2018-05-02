@@ -71,10 +71,34 @@ public class LocationActivity extends AppCompatActivity {
         location.setClient(client);
 
         et = (EditText) findViewById(R.id.dateDepart);
-        location.setDebutLocation(new Date(et.getText().toString()));
-        
+        String debutLoc = et.getText().toString();
+        String[] tabDateDebut = debutLoc.split("/");
+        String newDateDebut = tabDateDebut[1] + "/" + tabDateDebut[0] + "/" + tabDateDebut[2];
+        location.setDebutLocation(new Date(newDateDebut));
+        Log.i("TAG_debut", location.getDebutLocation().toString());
+
         et = (EditText) findViewById(R.id.dateRetour);
-        location.setFinLocation(new Date(et.getText().toString()));
+        String retourLoc = et.getText().toString();
+        String[] tabDateRetour = retourLoc.split("/");
+        String newDateRetour = tabDateRetour[1] + "/" + tabDateRetour[0] + "/" + tabDateRetour[2];
+        location.setFinLocation(new Date(newDateRetour));
+        Log.i("TAG-fin", location.getFinLocation().toString());
+
+        location.setEnCours(true);
+
+        float nbJours = (location.getFinLocation().getTime() - location.getDebutLocation().getTime()) / (24 * 60 * 60 * 1000);
+        int nb = (int) nbJours;
+        location.setPrixLocation(nb * location.getVoiture().getTarif());
+
+        location.setIdLocation(dao.insert(location));
+
+        Intent intent = new Intent(this, LocationEnCoursActivity.class);
+        intent.putExtra("idLocation", location.getIdLocation());
+        Log.i("TAG_ID_LOCATION", String.valueOf(location.getIdLocation()));
+        intent.putExtra("location", location);
+        Log.i("TAG_LOCATION", location.toString());
+        startActivity(intent);
+
 
     }
 }
