@@ -42,6 +42,9 @@ public class AccueilActivity extends AppCompatActivity {
     }
 
     public void goVueActivity(MenuItem item) {
+
+        Intent intent = new Intent(this,EtatBusinessActivity.class);
+        startActivity(intent);
     }
 
     public void newLocation(View view) {

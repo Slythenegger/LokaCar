@@ -21,7 +21,9 @@
         <activity android:name=".AddVoitureActivity" />
         <activity android:name=".AddClientActivity" />
         <activity android:name=".DetailClientActivity" />
-        <activity android:name=".AccueilActivity" />
+        <activity android:name=".AccueilActivity"/>
+        <activity android:name=".EtatBusinessActivity"/>
+
         <activity android:name=".VoitureActivity" />
         <activity android:name=".DetailVoitureActivity" />
         <activity android:name=".LocationActivity" />
