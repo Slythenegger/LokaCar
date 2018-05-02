@@ -10,7 +10,7 @@
     tools:context = ".LoginActivity">
 
     <TextView
-        android:text = "Bienvenu!"
+        android:text = "Tonga Soa!"
         android:layout_width="wrap_content"
         android:layout_height = "wrap_content"
         android:id = "@+id/textview"
@@ -61,7 +61,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Essaies restant:"
+        android:text="Essais restant(s):"
         android:id="@+id/textView2"
         android:layout_below="@+id/textPassword"
         android:layout_alignParentLeft="true"

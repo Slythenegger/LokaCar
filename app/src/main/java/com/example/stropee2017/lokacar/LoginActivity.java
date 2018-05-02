@@ -63,7 +63,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
                 else{
-                    Toast.makeText(getApplicationContext(), "Wrong Credentials",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Erreur Authentification",Toast.LENGTH_SHORT).show();
                     counter--;
                     tx1.setVisibility(View.VISIBLE);
                     tx1.setTextColor(Color.RED);
