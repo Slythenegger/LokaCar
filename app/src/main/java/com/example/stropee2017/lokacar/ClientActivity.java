@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
@@ -21,11 +22,17 @@ import java.util.List;
 public class ClientActivity extends AppCompatActivity {
 
     List<Client> listeClient = new ArrayList<>();
+    ListView lv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_client);
+
+        lv = findViewById(R.id.lstClient);
+
+        ViewGroup headerView = (ViewGroup) getLayoutInflater().inflate(R.layout.activity_header_list_voitures, lv, false);
+        lv.addHeaderView(headerView);
 
 
     }
@@ -33,7 +40,6 @@ public class ClientActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
 
-        ListView lv = findViewById(R.id.lstClient);
 
         ClientDAO dao = new ClientDAO(ClientActivity.this);
         listeClient = dao.getListe();
@@ -47,7 +53,7 @@ public class ClientActivity extends AppCompatActivity {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Client client = listeClient.get(position);
+                Client client = listeClient.get(position - 1);
                 Intent intent = new Intent(ClientActivity.this, DetailClientActivity.class);
                 intent.putExtra("id", client.getIdClient());
                 startActivity(intent);
@@ -65,7 +71,7 @@ public class ClientActivity extends AppCompatActivity {
 
                 } else {
                     Intent monIntent = new Intent();
-                    Client client = listeClient.get(position);
+                    Client client = listeClient.get(position - 1);
                     monIntent.putExtra("client", client);
                     setResult(RESULT_OK, monIntent);
                     finish();

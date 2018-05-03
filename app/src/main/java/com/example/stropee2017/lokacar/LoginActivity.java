@@ -46,7 +46,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (luc != null && password.getText().toString().equals(luc.getPassword())) {
 
                     Toast.makeText(getApplicationContext(),
-                            "Bienvenue!", Toast.LENGTH_SHORT).show();
+                            "Bienvenue !", Toast.LENGTH_SHORT).show();
                     setAgence();
 
 
