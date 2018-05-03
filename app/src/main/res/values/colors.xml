@@ -11,4 +11,5 @@
     <color name="colorBlack">#000000</color>
     <color name="colorAddVoiture">#000000</color>
     <color name="colorDetailVoiture">#d419ed</color>
+    <color name="colorRed">#ec3147</color>
 </resources>

@@ -42,8 +42,6 @@ public class LocationEnCoursActivity extends AppCompatActivity {
 
             long idLocation = intent.getLongExtra("idLocation", 0);
 
-            Log.i("TAG_ID_LOC_EN_COURS", String.valueOf(idLocation));
-
             location = dao.findLocationById(idLocation);
 
             tv = findViewById(R.id.txtNbJourLocEnCours);
