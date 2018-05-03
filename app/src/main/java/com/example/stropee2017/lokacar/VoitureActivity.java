@@ -21,11 +21,17 @@ import java.util.List;
 public class VoitureActivity extends AppCompatActivity {
 
     List<Voiture> listeVoitures = new ArrayList<>();
+    ListView lv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_voiture);
+        
+        //la liste s'intégrera dans la layout identifié par listVoitures
+        lv = (ListView) findViewById(R.id.listVoitures);
+        ViewGroup headerView = (ViewGroup) getLayoutInflater().inflate(R.layout.activity_header_list_voitures, lv, false);
+        lv.addHeaderView(headerView);
     }
 
 
@@ -33,10 +39,8 @@ public class VoitureActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
 
-        //la liste s'intégrera dans la layout identifié par listVoitures
-        ListView lv = (ListView) findViewById(R.id.listVoitures);
-        ViewGroup headerView = (ViewGroup) getLayoutInflater().inflate(R.layout.activity_header_list_voitures, lv, false);
-        lv.addHeaderView(headerView);
+
+
 
         VoitureDAO voitureDAO = new VoitureDAO(VoitureActivity.this);
         //appel de la fonction getListe -> récupération des voitures dans ma BDD
@@ -50,7 +54,7 @@ public class VoitureActivity extends AppCompatActivity {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Voiture voiture = listeVoitures.get(position);
+                Voiture voiture = listeVoitures.get(position - 1);
                 Intent intent = new Intent(VoitureActivity.this, DetailVoitureActivity.class);
                 intent.putExtra("id", voiture.getId());
                 startActivity(intent);
@@ -69,7 +73,7 @@ public class VoitureActivity extends AppCompatActivity {
 
                 } else {
                     Intent monIntent = new Intent();
-                    Voiture voiture = listeVoitures.get(position);
+                    Voiture voiture = listeVoitures.get(position - 1);
                     monIntent.putExtra("voiture", voiture);
                     setResult(RESULT_OK, monIntent);
                     finish();
