@@ -41,7 +41,7 @@ public class BddHelper extends SQLiteOpenHelper {
         ContentValues c = buildContent(agence);
         db.insert(AgenceContract.TABLE_NAME, null, c);
 
-      
+
     }
 
     @Override

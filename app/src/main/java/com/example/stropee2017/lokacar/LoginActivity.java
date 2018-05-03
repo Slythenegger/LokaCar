@@ -18,24 +18,23 @@ import com.example.stropee2017.lokacar.dao.contract.LoginContract;
 
 public class LoginActivity extends AppCompatActivity {
     Agence luc;
-    Button boutonLogin,boutonCancel;
-    EditText username,password;
+    Button boutonLogin, boutonCancel;
+    EditText username, password;
 
     TextView tx1;
-    int counter = 4;
+    int counter = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
 
-        boutonLogin = (Button)findViewById(R.id.buttonLogin);
-        username = (EditText)findViewById(R.id.textUsername);
-        password = (EditText)findViewById(R.id.textPassword);
+        boutonLogin = (Button) findViewById(R.id.buttonLogin);
+        username = (EditText) findViewById(R.id.textUsername);
+        password = (EditText) findViewById(R.id.textPassword);
 
-        boutonCancel = (Button)findViewById(R.id.buttonCancel);
-        tx1 = (TextView)findViewById(R.id.nombreAttentat);
-        tx1.setVisibility(View.GONE);
+        boutonCancel = (Button) findViewById(R.id.buttonCancel);
+        tx1 = (TextView) findViewById(R.id.nombreAttentat);
 
 
         boutonLogin.setOnClickListener(new View.OnClickListener() {
@@ -44,31 +43,26 @@ public class LoginActivity extends AppCompatActivity {
                 AgenceDAO agenceDAO = new AgenceDAO(LoginActivity.this);
                 luc = agenceDAO.findAgenceById(Integer.parseInt((username.getText().toString())));
 
-                if( luc != null && password.getText().toString().equals(luc.getPassword())) {
+                if (luc != null && password.getText().toString().equals(luc.getPassword())) {
 
                     Toast.makeText(getApplicationContext(),
-                                "Bienvenue!",Toast.LENGTH_SHORT).show();
+                            "Bienvenue!", Toast.LENGTH_SHORT).show();
                     setAgence();
 
 
-                        Intent intent = new Intent(LoginActivity.this,
-                                AccueilActivity.class);
-                        // intent.putExtra(EXTRA_LOGIN, loginTxt);
-                        // intent.putExtra(EXTRA_PASSWORD, passTxt);
+                    Intent intent = new Intent(LoginActivity.this,
+                            AccueilActivity.class);
+                    // intent.putExtra(EXTRA_LOGIN, loginTxt);
+                    // intent.putExtra(EXTRA_PASSWORD, passTxt);
 
-                        startActivity(intent);
-                }
-
-
-
-
-                else{
-                    Toast.makeText(getApplicationContext(), "Erreur Authentification",Toast.LENGTH_SHORT).show();
-                    counter--;
-                    tx1.setVisibility(View.VISIBLE);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(getApplicationContext(), "Erreur Authentification", Toast.LENGTH_SHORT).show();
                     tx1.setTextColor(Color.RED);
-
+                    counter--;
                     tx1.setText(Integer.toString(counter));
+                    username.setText("");
+                    password.setText("");
 
                     if (counter == 0) {
                         boutonLogin.setEnabled(false);
@@ -83,14 +77,15 @@ public class LoginActivity extends AppCompatActivity {
                 username.setText("");
                 password.setText("");
 
+
             }
         });
 
 
     }
 
-    public void setAgence(){
-        if(luc !=null) {
+    public void setAgence() {
+        if (luc != null) {
             //on set avec les parametres récupérées dans la base de données
             ((Agence) this.getApplication()).setIdAgence(luc.getIdAgence());
             ((Agence) this.getApplication()).setNomGerant(luc.getNomGerant());
@@ -101,12 +96,10 @@ public class LoginActivity extends AppCompatActivity {
             ((Agence) this.getApplication()).setTelephone(luc.getTelephone());
             ((Agence) this.getApplication()).setPassword(luc.getPassword());
             ((Agence) this.getApplication()).setChiffreDAffaire(luc.getChiffreDAffaire());
-        }else {
-            Toast.makeText(getApplicationContext(),"récupération de l'agence échoué",Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(getApplicationContext(), "récupération de l'agence échoué", Toast.LENGTH_SHORT).show();
         }
     }
-
-
 
 
 }

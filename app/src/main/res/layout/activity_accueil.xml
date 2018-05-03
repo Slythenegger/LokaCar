@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".AccueilActivity">
 
-
+   
     <Button
         android:id="@+id/btnNewLocation"
         android:layout_width="match_parent"

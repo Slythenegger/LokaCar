@@ -3,6 +3,7 @@ package com.example.stropee2017.lokacar;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,11 +17,8 @@ public class AccueilActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_accueil);
 
-        ((Agence) this.getApplication()).setVille("Nantes");
-        ((Agence) this.getApplication()).setIdAgence(1);
 
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -43,7 +41,7 @@ public class AccueilActivity extends AppCompatActivity {
 
     public void goVueActivity(MenuItem item) {
 
-        Intent intent = new Intent(this,EtatBusinessActivity.class);
+        Intent intent = new Intent(this, EtatBusinessActivity.class);
         startActivity(intent);
     }
 

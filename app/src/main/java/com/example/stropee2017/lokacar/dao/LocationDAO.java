@@ -85,7 +85,7 @@ public class LocationDAO {
         listeLocation = new ArrayList<>();
         SQLiteDatabase db = helper.getReadableDatabase();
 
-        Cursor c = db.query(LocationContract.TABLE_NAME, null, LocationContract.COL_ETAT_LOCATION + "=?", new String[]{"1"}, null, null, null);
+        Cursor c = db.query(LocationContract.TABLE_NAME, null, LocationContract.COL_ETAT_LOCATION + "=?", new String[]{"1"}, null, null, LocationContract.COL_DATE_FIN_LOCATION + " ASC");
 
         if (c != null && c.moveToFirst()) {
 
@@ -108,7 +108,7 @@ public class LocationDAO {
         location.setFinLocation(new Date(c.getString(c.getColumnIndex(LocationContract.COL_DATE_FIN_LOCATION))));
         location.setDebutLocation(new Date(c.getString(c.getColumnIndex(LocationContract.COL_DATE_DEBUT_LOCATION))));
         int locEnCours = c.getInt(c.getColumnIndex(LocationContract.COL_ETAT_LOCATION));
-        boolean enCours = (locEnCours == 1) ? true : false;
+        boolean enCours = (locEnCours == 1);
         location.setEnCours(enCours);
 
         long idVoiture = c.getLong(c.getColumnIndex(LocationContract.COL_ID_VOITURE));
