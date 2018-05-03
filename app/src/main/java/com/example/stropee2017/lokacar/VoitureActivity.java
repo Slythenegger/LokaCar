@@ -54,10 +54,14 @@ public class VoitureActivity extends AppCompatActivity {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Voiture voiture = listeVoitures.get(position - 1);
-                Intent intent = new Intent(VoitureActivity.this, DetailVoitureActivity.class);
-                intent.putExtra("id", voiture.getId());
-                startActivity(intent);
+                if(position>0){
+                    Voiture voiture = listeVoitures.get(position - 1);
+                    Intent intent = new Intent(VoitureActivity.this, DetailVoitureActivity.class);
+                    intent.putExtra("id", voiture.getId());
+                    startActivity(intent);
+                }
+
+
             }
         });
 

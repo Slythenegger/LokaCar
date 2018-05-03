@@ -31,7 +31,7 @@ public class ClientActivity extends AppCompatActivity {
 
         lv = findViewById(R.id.lstClient);
 
-        ViewGroup headerView = (ViewGroup) getLayoutInflater().inflate(R.layout.activity_header_list_voitures, lv, false);
+        ViewGroup headerView = (ViewGroup) getLayoutInflater().inflate(R.layout.activity_header_list_clients, lv, false);
         lv.addHeaderView(headerView);
 
 
@@ -53,16 +53,20 @@ public class ClientActivity extends AppCompatActivity {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Client client = listeClient.get(position - 1);
-                Intent intent = new Intent(ClientActivity.this, DetailClientActivity.class);
-                intent.putExtra("id", client.getIdClient());
-                startActivity(intent);
+                if (position > 0) {
+                    Client client = listeClient.get(position - 1);
+                    Intent intent = new Intent(ClientActivity.this, DetailClientActivity.class);
+                    intent.putExtra("id", client.getIdClient());
+                    startActivity(intent);
+                }
+
             }
         });
 
         lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+
 
                 Intent intent = getIntent();
                 if (intent.getBooleanExtra("newLocation", false) == false) {
