@@ -17,11 +17,12 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-
             <TextView
                 android:id="@+id/idMarque"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="@color/colorAddVoiture"
                 android:text="@string/txtMarque" />
 
             <Spinner
@@ -38,6 +39,8 @@
                 android:id="@+id/idModele"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="@color/colorAddVoiture"
                 android:text="@string/txtModele" />
 
             <EditText
@@ -50,43 +53,51 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp">
 
             <TextView
                 android:id="@+id/idImmat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="@color/colorAddVoiture"
                 android:text="@string/txtImmat" />
 
             <EditText
                 android:id="@+id/idEditImmat"
-                android:layout_width="0dp"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.25"
+
                 android:inputType="text" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="@color/colorAddVoiture"
                 android:text="@string/txtAnnee" />
 
             <EditText
                 android:id="@+id/idEditAnnee"
-                android:layout_width="0dp"
+                android:layout_width="55dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.25"
+
                 android:inputType="number" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp">
 
             <TextView
                 android:id="@+id/idCouleur"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="@color/colorAddVoiture"
                 android:text="@string/txtCouleur" />
 
             <EditText
@@ -99,6 +110,8 @@
                 android:id="@+id/idCarburant"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="@color/colorAddVoiture"
                 android:text="@string/txtCarburant" />
 
             <EditText
@@ -111,44 +124,52 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            >
 
             <TextView
                 android:id="@+id/idPuissance"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="@color/colorAddVoiture"
                 android:text="@string/txtPuissance" />
 
             <EditText
                 android:id="@+id/idEditPuissance"
-                android:layout_width="0dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.25"
                 android:inputType="number" />
 
             <TextView
                 android:id="@+id/idPortes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="@color/colorAddVoiture"
                 android:text="@string/txtPorte" />
 
             <EditText
                 android:id="@+id/idEditPortes"
-                android:layout_width="0dp"
+                android:layout_width="30dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.25"
                 android:inputType="number" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            >
 
             <TextView
                 android:id="@+id/idStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:textColor="@color/colorAddVoiture"
                 android:text="@string/txtStyle" />
 
             <EditText
@@ -161,6 +182,8 @@
                 android:id="@+id/idDispo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:textColor="@color/colorAddVoiture"
                 android:text="@string/txtDispo" />
 
             <RadioGroup
@@ -168,17 +191,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                >
 
                 <RadioButton
                     android:id="@+id/radioButtonOui"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/txtDispoOui" />
+                    android:text="@string/txtDispoOui"
+                    android:textSize="15dp"
+                    />
 
                 <RadioButton
                     android:id="@+id/radioButtonNon"
                     android:layout_width="wrap_content"
+                    android:textSize="15dp"
                     android:layout_height="wrap_content"
                     android:text="@string/txtDispoNon" />
 
@@ -189,33 +216,42 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="@color/colorAddVoiture"
                 android:text="@string/txtTarif" />
 
             <EditText
                 android:id="@+id/idEditTarif"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
-                android:inputType="number" />
+                android:inputType="numberDecimal" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="@color/colorAddVoiture"
                 android:text="@string/txtEuro" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="@color/colorAddVoiture"
                 android:text="@string/txtEtat" />
 
             <RadioGroup
@@ -250,11 +286,15 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="@color/colorAddVoiture"
                 android:text="@string/txtAgence" />
 
             <EditText
@@ -266,25 +306,19 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
 
             <Button
                 android:id="@+id/btnAjouterVoiture"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#de3c41"
+                android:background="#5ecf31"
                 android:onClick="onClickAjouterVoiture"
                 android:text="@string/btnAjoutVoiture" />
 
         </LinearLayout>
 
-
-
-
-
-
-
     </LinearLayout>
-
 
 </LinearLayout>

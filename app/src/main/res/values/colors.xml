@@ -9,4 +9,6 @@
     <color name="colorGrey">#bdc3c4</color>
     <color name="colorLoc">#de7965</color>
     <color name="colorBlack">#000000</color>
+    <color name="colorAddVoiture">#000000</color>
+    <color name="colorDetailVoiture">#d419ed</color>
 </resources>

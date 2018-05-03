@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="5dp"
     tools:context=".DetailVoitureActivity">
 
     <LinearLayout
@@ -21,204 +22,279 @@
                 android:id="@+id/idMarque"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txtMarque" />
+                android:text="@string/txtMarque"
+                android:textColor="@color/colorAddVoiture"
+                android:textSize="20dp" />
 
             <TextView
                 android:id="@+id/recupMarque"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.25" />
+                android:layout_weight="0.25"
+                android:textColor="@color/colorDetailVoiture"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/idModele"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txtModele" />
+                android:text="@string/txtModele"
+                android:textColor="@color/colorAddVoiture"
+                android:textSize="20dp" />
 
             <TextView
                 android:id="@+id/recupModele"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.25" />
+                android:layout_weight="0.25"
+                android:textColor="@color/colorDetailVoiture"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingTop="40dp">
 
             <TextView
                 android:id="@+id/idImmat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txtImmat" />
+                android:text="@string/txtImmat"
+                android:textColor="@color/colorAddVoiture"
+                android:textSize="20dp" />
 
             <TextView
                 android:id="@+id/recupImmat"
-                android:layout_width="0dp"
+                android:layout_width="125dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.25" />
+                android:textColor="@color/colorDetailVoiture"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txtAnnee" />
+                android:text="@string/txtAnnee"
+                android:textColor="@color/colorAddVoiture"
+                android:textSize="20dp" />
 
             <TextView
                 android:id="@+id/recupAnnee"
-                android:layout_width="0dp"
+                android:layout_width="55dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.25"
-                android:inputType="number" />
+                android:inputType="number"
+                android:textColor="@color/colorDetailVoiture"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingTop="40dp"
+            android:textColor="@color/colorDetailVoiture"
+            android:textSize="20dp"
+            android:textStyle="bold">
 
             <TextView
                 android:id="@+id/idCouleur"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txtCouleur" />
+                android:text="@string/txtCouleur"
+                android:textColor="@color/colorAddVoiture"
+                android:textSize="20dp" />
 
             <TextView
                 android:id="@+id/recupCouleur"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.25" />
+                android:layout_weight="0.25"
+                android:textColor="@color/colorDetailVoiture"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/idCarburant"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txtCarburant" />
+                android:text="@string/txtCarburant"
+                android:textColor="@color/colorAddVoiture"
+                android:textSize="20dp" />
 
             <TextView
                 android:id="@+id/recupCarburant"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.25" />
+                android:layout_weight="0.25"
+                android:textColor="@color/colorDetailVoiture"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingTop="40dp">
 
             <TextView
                 android:id="@+id/idPuissance"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txtPuissance" />
+                android:text="@string/txtPuissance"
+                android:textColor="@color/colorAddVoiture"
+                android:textSize="20dp" />
 
             <TextView
                 android:id="@+id/recupPuissance"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.25"
-                android:inputType="number" />
+                android:inputType="number"
+                android:textColor="@color/colorDetailVoiture"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/idPortes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txtPorte" />
+                android:text="@string/txtPorte"
+                android:textColor="@color/colorAddVoiture"
+                android:textSize="20dp" />
 
             <TextView
                 android:id="@+id/recupPortes"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.25"
-                android:inputType="number" />
+                android:inputType="number"
+                android:textColor="@color/colorDetailVoiture"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingTop="40dp">
 
             <TextView
                 android:id="@+id/idStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txtStyle" />
+                android:text="@string/txtStyle"
+                android:textColor="@color/colorAddVoiture"
+                android:textSize="20dp" />
 
             <TextView
                 android:id="@+id/recupStyle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.25" />
+                android:layout_weight="0.25"
+                android:textColor="@color/colorDetailVoiture"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/idDispo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txtDispo" />
+                android:text="@string/txtDispo"
+                android:textColor="@color/colorAddVoiture"
+                android:textSize="20dp" />
 
             <TextView
                 android:id="@+id/recupDispo"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.25" />
+                android:layout_weight="0.25"
+                android:textColor="@color/colorDetailVoiture"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingTop="40dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txtTarif" />
+                android:text="@string/txtTarif"
+                android:textColor="@color/colorAddVoiture"
+                android:textSize="20dp" />
 
             <TextView
                 android:id="@+id/recupTarif"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
-                android:inputType="number" />
+                android:inputType="number"
+                android:textColor="@color/colorDetailVoiture"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/txtEuro" />
+                android:text="@string/txtEuro"
+                android:textColor="@color/colorAddVoiture"
+                android:textSize="20dp" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingTop="40dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txtEtat" />
+                android:text="@string/txtEtat"
+                android:textColor="@color/colorAddVoiture"
+                android:textSize="20dp" />
 
             <TextView
                 android:id="@+id/recupEtat"
                 android:layout_width="70dp"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorDetailVoiture"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingTop="40dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txtAgence" />
+                android:text="@string/txtAgence"
+                android:textColor="@color/colorAddVoiture"
+                android:textSize="20dp" />
 
             <TextView
                 android:id="@+id/recupAgence"
                 android:layout_width="200dp"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorDetailVoiture"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
     </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>

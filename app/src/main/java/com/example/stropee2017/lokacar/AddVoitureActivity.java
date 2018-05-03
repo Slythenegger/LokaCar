@@ -23,31 +23,18 @@ import java.util.List;
 public class AddVoitureActivity extends AppCompatActivity {
 
     private BddHelper helper;
-
     private int idVoiture;
     private Voiture nouvelleVoiture;
     private VoitureDAO voitureDAO;
     private Spinner editMarque;
-    private EditText editModele;
-    private EditText editImmat;
-    private EditText editAnnee;
-    private EditText editCouleur;
-    private EditText editCarburant;
-    private EditText editPuissance;
-    private EditText editPorte;
-    private EditText editStyle;
+    private EditText editModele, editImmat, editAnnee, editCouleur, editCarburant, editPuissance, editPorte, editStyle, editTarif, editAgence;
     private RadioGroup radioDispo;
-    private RadioButton btnDispo;
-    private RadioGroup radioEtat;
-    private RadioButton btnEtat;
-    private RadioGroup editEtat;
-    private EditText editTarif;
-    private EditText editAgence;
+    private RadioButton btnDispo, btnEtat;
+    private RadioGroup radioEtat, editEtat;
     List<String> listMarques = new ArrayList();
-    private String marque;
+    private String marque, etatVoiture;
     private int dispo;
     private boolean estDispo;
-    private String etatVoiture;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,6 +90,11 @@ public class AddVoitureActivity extends AppCompatActivity {
         radioDispo = (RadioGroup) findViewById(R.id.radioGroupDispo);
         radioEtat = (RadioGroup) findViewById(R.id.radioGroupEtat);
 
+        int puissance = 0;
+        int portes = 0;
+        int tarif = 0;
+        String modele = null;
+
         //estDispo
         dispo = radioDispo.getCheckedRadioButtonId();
         btnDispo = findViewById(dispo);
@@ -113,22 +105,40 @@ public class AddVoitureActivity extends AppCompatActivity {
         btnEtat = findViewById(radioEtat.getCheckedRadioButtonId());
         etatVoiture = btnEtat.getText().toString();
 
+        if (editModele == null) {
+            Toast.makeText(getApplicationContext(), "Indiquez le modèle svp", Toast.LENGTH_SHORT).show();
+        } else {
+            modele = editModele.getText().toString();
+        }
 
-        String modele = editModele.getText().toString();
+
         String immat = editImmat.getText().toString();
         String annee = editAnnee.getText().toString();
         String couleur = editCouleur.getText().toString();
         String carburant = editCarburant.getText().toString();
         //je récupère un texte que je veux transformer en int. Du coup j'utilise un parse pour transformer le string en interger
-        int puissance = Integer.parseInt(editPuissance.getText().toString());
-        int portes = Integer.parseInt(editPorte.getText().toString());
+
+        if ("".equals(editPuissance)) {
+            Toast.makeText(getApplicationContext(), "Ajoutez la puissance svp", Toast.LENGTH_SHORT).show();
+        } else {
+            puissance = Integer.parseInt(editPuissance.getText().toString());
+        }
+
+        if (editPorte == null) {
+            Toast.makeText(getApplication(), "Indiquez le nombre de portes svp", Toast.LENGTH_SHORT).show();
+        } else {
+            portes = Integer.parseInt(editPorte.getText().toString());
+        }
+
+        if (editTarif == null) {
+            Toast.makeText(getApplication(), "Indiquez le tarif svp", Toast.LENGTH_SHORT).show();
+        } else {
+            tarif = Integer.parseInt(editTarif.getText().toString());
+        }
         String style = editStyle.getText().toString();
 
-        int tarif = Integer.parseInt(editTarif.getText().toString());
 
-
-        String marqueItem = listMarques.get(listMarques.indexOf(marque));
-
+        //ce bloc sera la condition si la voiture a été correctement insérée
         nouvelleVoiture = new Voiture(tarif, puissance, portes, marque, modele, etatVoiture, immat, couleur, carburant, style, estDispo, annee);
         nouvelleVoiture.setIdAgence(((Agence) this.getApplication()).getIdAgence());
         Log.v("TAG", "voiture :" + nouvelleVoiture);
@@ -136,9 +146,11 @@ public class AddVoitureActivity extends AppCompatActivity {
         long id = voitureDAO.insert(nouvelleVoiture);
         nouvelleVoiture.setId(id);
 
+        if (nouvelleVoiture != null) {
+            Toast.makeText(getApplication(), "Voiture ajoutée", Toast.LENGTH_SHORT).show();
+        }
+
         finish();
 
     }
-
-
 }

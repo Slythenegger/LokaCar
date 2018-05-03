@@ -9,12 +9,12 @@
     <string name="txtCarburant">Carburant : </string>
     <string name="txtEtat">Etat de la voiture : </string>
     <string name="txtTarif">Tarif journalier :</string>
-    <string name="txtPorte">Nombre de portes : </string>
-    <string name="txtStyle">Style de la voiture :</string>
+    <string name="txtPorte">Portes : </string>
+    <string name="txtStyle">Style :</string>
     <string name="txtDispo">Disponibilité :</string>
     <string name="txtAnnee">Année : </string>
     <string name="txtPuissance">Puissance : </string>
-    <string name="txtEuro">euros</string>
+    <string name="txtEuro">€</string>
     <string name="txtCV">CV</string>
     <string name="btnAjoutVoiture">Valider</string>
     <string name="txtAgence">Agence : </string>
