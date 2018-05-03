@@ -18,6 +18,7 @@
 
         <TextView
             android:id="@+id/txtNom"
+            android:background="@color/colorGrey"
             style="@style/TextAppearance.AppCompat.Large"
             android:layout_width="0dp"
             android:layout_height="30dp"
@@ -31,6 +32,7 @@
             android:id="@+id/txtPrenom"
             style="@style/TextAppearance.AppCompat.Large"
             android:layout_width="0dp"
+            android:background="@color/colorGrey"
             android:layout_height="30dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -42,6 +44,7 @@
 
     <LinearLayout
         android:id="@+id/second"
+        android:paddingTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -72,6 +75,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:paddingTop="10dp"
         android:id="@+id/third"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -83,13 +87,15 @@
         <TextView
             android:id="@+id/txtAdresse"
             style="@style/TextAppearance.AppCompat.Large"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/colorGrey"
             android:text="Adresse :" />
 
     </LinearLayout>
 
     <LinearLayout
+        android:paddingTop="10dp"
         android:id="@+id/fourth"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -105,6 +111,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:paddingTop="10dp"
         android:id="@+id/five"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -113,6 +120,7 @@
         <TextView
             android:id="@+id/txtCodepostal"
             style="@style/TextAppearance.AppCompat.Large"
+            android:background="@color/colorGrey"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
@@ -120,6 +128,7 @@
 
         <TextView
             style="@style/TextAppearance.AppCompat.Large"
+            android:background="@color/colorGrey"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
@@ -129,6 +138,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:paddingTop="10dp"
         android:id="@+id/clientSix"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -151,6 +161,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:paddingTop="10dp"
         android:id="@+id/clientSeven"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -159,6 +170,7 @@
 
         <TextView
             android:id="@+id/txtTelephone"
+            android:background="@color/colorGrey"
             style="@style/TextAppearance.AppCompat.Large"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -168,6 +180,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:paddingTop="10dp"
         android:id="@+id/clientHeight"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -182,6 +195,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:paddingTop="10dp"
         android:id="@+id/clientNine"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -191,6 +205,7 @@
         <TextView
             android:id="@+id/txtMail"
             style="@style/TextAppearance.AppCompat.Large"
+            android:background="@color/colorGrey"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Email :" />
@@ -199,6 +214,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:paddingTop="10dp"
         android:id="@+id/clientTen"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -213,6 +229,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:paddingTop="10dp"
         android:id="@+id/clientEleven"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -223,6 +240,7 @@
             android:id="@+id/txtPermis"
             style="@style/TextAppearance.AppCompat.Large"
             android:layout_width="match_parent"
+            android:background="@color/colorGrey"
             android:layout_height="wrap_content"
             android:text="Numéro de permis :" />
 
@@ -230,6 +248,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:paddingTop="10dp"
         android:id="@+id/clientTwelve"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

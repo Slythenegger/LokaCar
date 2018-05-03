@@ -3,4 +3,10 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="colornewLocation">#2ec64a</color>
+    <color name="colorlocEnCours">#2bcfe1</color>
+    <color name="colorMidClient">#bdc3c4</color>
+    <color name="colorGrey">#bdc3c4</color>
+    <color name="colorLoc">#de7965</color>
+    <color name="colorBlack">#000000</color>
 </resources>

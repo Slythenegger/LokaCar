@@ -9,6 +9,17 @@
 
 
     <TextView
+        style="@style/TextAppearance.AppCompat.Large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Résumé de la location :" />
+
+
+
+
+    <TextView
         android:id="@+id/txtTarif"
         style="@style/TextAppearance.AppCompat.Large"
         android:layout_width="wrap_content"
