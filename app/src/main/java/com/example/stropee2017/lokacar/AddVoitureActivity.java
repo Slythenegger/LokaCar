@@ -4,11 +4,13 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.stropee2017.lokacar.beans.Agence;
 import com.example.stropee2017.lokacar.beans.Voiture;
@@ -77,14 +79,19 @@ public class AddVoitureActivity extends AppCompatActivity {
 
         ArrayAdapter adapter = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, listMarques);
         adapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
-        /*
-        editMarque.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+        editMarque.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 marque = listMarques.get(position);
             }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                marque = listMarques.get(0);
+            }
         });
-        */
+
         editMarque.setAdapter(adapter);
 
 
@@ -119,9 +126,8 @@ public class AddVoitureActivity extends AppCompatActivity {
 
         int tarif = Integer.parseInt(editTarif.getText().toString());
 
-        if (marque == null) {
-            marque = listMarques.get(0);
-        }
+
+        String marqueItem = listMarques.get(listMarques.indexOf(marque));
 
         nouvelleVoiture = new Voiture(tarif, puissance, portes, marque, modele, etatVoiture, immat, couleur, carburant, style, estDispo, annee);
         nouvelleVoiture.setIdAgence(((Agence) this.getApplication()).getIdAgence());
