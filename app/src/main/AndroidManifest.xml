@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.stropee2017.lokacar">
 
+
+    <uses-permission android:name="android.permission.SEND_SMS"></uses-permission>
+
+
     <application
         android:name=".beans.Agence"
         android:allowBackup="true"

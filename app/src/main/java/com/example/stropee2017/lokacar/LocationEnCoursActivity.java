@@ -1,9 +1,12 @@
 package com.example.stropee2017.lokacar;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -19,6 +22,7 @@ public class LocationEnCoursActivity extends AppCompatActivity {
 
     Location location;
     TextView tv;
+    String dateRetour, dateDebut;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,10 +56,17 @@ public class LocationEnCoursActivity extends AppCompatActivity {
 
             tv = findViewById(R.id.txtRetourPrevuLocEnCours);
             android.text.format.DateFormat df = new android.text.format.DateFormat();
-            String date = (String) df.format("dd-MM-yyyy", location.getFinLocation());
-            tv.setText(date);
+            dateRetour = (String) df.format("dd-MM-yyyy", location.getFinLocation());
+            dateDebut = (String) df.format("dd-MM-yyyy", location.getDebutLocation());
+            tv.setText(dateRetour);
         }
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.sms, menu);
+        return true;
     }
 
     public void backAccueil(View view) {
@@ -73,6 +84,21 @@ public class LocationEnCoursActivity extends AppCompatActivity {
         dao.insertOrUpdate(location);
         backAccueil(view);
 
+    }
+
+
+    public void sendSms(MenuItem item) {
+
+        Uri uri = Uri.parse("smsto:" + location.getClient().getTel());
+        Intent it = new Intent(Intent.ACTION_SENDTO, uri);
+        it.putExtra("sms_body", "LokaCar : Bonjour Mme/M " + location.getClient().getNom() +
+                ". Votre location d'une " + location.getVoiture().getMarque() + " " + location.getVoiture().getModele()
+                + " à partir du " + dateDebut + " jusqu'au " + dateRetour
+                + " est bien enregistrée. Merci d'utiliser nos services. Bon voyage !");
+        startActivity(it);
+
 
     }
+
+
 }
