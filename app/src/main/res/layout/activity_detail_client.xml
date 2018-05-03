@@ -269,6 +269,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="36dp"
+        android:background="@color/colorRed"
         android:text="Modifier"
         android:onClick="editClient"/>
 

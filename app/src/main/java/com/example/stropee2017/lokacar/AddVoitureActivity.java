@@ -92,7 +92,7 @@ public class AddVoitureActivity extends AppCompatActivity {
 
         int puissance = 0;
         int portes = 0;
-        int tarif = 0;
+        float tarif = 0;
         String modele = null;
 
         //estDispo
@@ -133,7 +133,7 @@ public class AddVoitureActivity extends AppCompatActivity {
         if (editTarif == null) {
             Toast.makeText(getApplication(), "Indiquez le tarif svp", Toast.LENGTH_SHORT).show();
         } else {
-            tarif = Integer.parseInt(editTarif.getText().toString());
+            tarif = Float.parseFloat(editTarif.getText().toString());
         }
         String style = editStyle.getText().toString();
 

@@ -8,7 +8,8 @@ import java.util.List;
 public class Voiture implements Parcelable {
 
     private long id, idAgence;
-    private int tarif, puissance, portes;
+    private float tarif;
+    private int puissance, portes;
     private String marque, modele, etatVoiture, immat, couleur, carburant, style, annee;
     private boolean dispo;
     private List<String> listPhotos;
@@ -16,7 +17,7 @@ public class Voiture implements Parcelable {
     public Voiture() {
     }
 
-    public Voiture(int tarif, int puissance, int portes, String marque, String modele, String etatVoiture, String immat, String couleur, String carburant, String style, boolean dispo, String annee) {
+    public Voiture(float tarif, int puissance, int portes, String marque, String modele, String etatVoiture, String immat, String couleur, String carburant, String style, boolean dispo, String annee) {
         this.tarif = tarif;
         this.puissance = puissance;
         this.portes = portes;
@@ -34,7 +35,7 @@ public class Voiture implements Parcelable {
     protected Voiture(Parcel in) {
         id = in.readLong();
         idAgence = in.readLong();
-        tarif = in.readInt();
+        tarif = in.readFloat();
         puissance = in.readInt();
         portes = in.readInt();
         marque = in.readString();
@@ -77,11 +78,11 @@ public class Voiture implements Parcelable {
         this.idAgence = idAgence;
     }
 
-    public int getTarif() {
+    public float getTarif() {
         return tarif;
     }
 
-    public void setTarif(int tarif) {
+    public void setTarif(float tarif) {
         this.tarif = tarif;
     }
 
@@ -212,7 +213,7 @@ public class Voiture implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeLong(id);
         dest.writeLong(idAgence);
-        dest.writeInt(tarif);
+        dest.writeFloat(tarif);
         dest.writeInt(puissance);
         dest.writeInt(portes);
         dest.writeString(marque);
