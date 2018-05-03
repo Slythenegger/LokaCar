@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
@@ -34,6 +35,8 @@ public class VoitureActivity extends AppCompatActivity {
 
         //la liste s'intégrera dans la layout identifié par listVoitures
         ListView lv = (ListView) findViewById(R.id.listVoitures);
+        ViewGroup headerView = (ViewGroup) getLayoutInflater().inflate(R.layout.activity_header_list_voitures, lv, false);
+        lv.addHeaderView(headerView);
 
         VoitureDAO voitureDAO = new VoitureDAO(VoitureActivity.this);
         //appel de la fonction getListe -> récupération des voitures dans ma BDD
