@@ -63,6 +63,10 @@ public class AddVoitureActivity extends AppCompatActivity {
         listMarques.add("Toyota");
         listMarques.add("Porsche");
         listMarques.add("Smart");
+        listMarques.add("Lexus");
+        listMarques.add("Mercedes");
+        listMarques.add("Tesla");
+        listMarques.add("Ferrari");
 
         ArrayAdapter adapter = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, listMarques);
         adapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);

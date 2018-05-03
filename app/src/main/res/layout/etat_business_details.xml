@@ -2,35 +2,41 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="100dp"
 
     >
 
 
     <ImageView
         android:id="@+id/avatar"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
         android:background="@drawable/ford_mustang_cabriolet_rouge" />
 
-    <TextView android:id="@+id/pseudo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
-        android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@+id/avatar"
-        android:layout_alignTop="@+id/avatar"
-        android:textStyle="bold"
+    <TextView
+        android:id="@+id/pseudo"
+        android:layout_width="284dp"
+        android:layout_height="43dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/avatar"
         android:text="Pseudo"
-       />
-
-    <TextView android:id="@+id/text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:textColor="@android:color/black"
-        android:layout_alignLeft="@+id/pseudo"
-        android:layout_below="@+id/pseudo"
-        android:text="Texte de mon tweet" />
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:textAlignment="center"/>
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="284dp"
+        android:layout_height="57dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        android:layout_toEndOf="@+id/avatar"
+        android:text="Texte de mon tweet"
+        android:textColor="@android:color/black"
+        android:textSize="17dp"
+        android:textAlignment="center"/>
 
 </RelativeLayout>
 
