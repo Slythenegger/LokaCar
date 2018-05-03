@@ -15,18 +15,20 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".LoginActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity android:name=".ClientActivity" />
         <activity android:name=".AddVoitureActivity" />
         <activity android:name=".AddClientActivity" />
         <activity android:name=".DetailClientActivity" />
         <activity android:name=".AccueilActivity" />
-        <activity android:name=".EtatBusinessActivity" />
+        <activity android:name=".EtatBusinessActivity" >
+
+        </activity>
 
         <activity android:name=".VoitureActivity" />
         <activity android:name=".DetailVoitureActivity" />

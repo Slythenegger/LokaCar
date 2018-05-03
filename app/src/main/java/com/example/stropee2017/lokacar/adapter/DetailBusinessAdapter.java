@@ -52,6 +52,12 @@ public class DetailBusinessAdapter extends ArrayAdapter<Voiture>{
         holder.marque.setText(voiture.getMarque());
         holder.modele.setText((voiture.getModele()));
 
+        if (voiture.getDispo() == true) {
+            convertView.setBackgroundColor(Color.GREEN);
+
+        } else{
+            convertView.setBackgroundColor(Color.RED);
+        }
 
 
 

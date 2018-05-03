@@ -98,6 +98,23 @@ public class LocationDAO {
         return listeLocation;
     }
 
+    public List<Location> getListeLocationPasEnCours() {
+
+        listeLocation = new ArrayList<>();
+        SQLiteDatabase db = helper.getReadableDatabase();
+
+        Cursor c = db.query(LocationContract.TABLE_NAME, null, LocationContract.COL_ETAT_LOCATION + "=?", new String[]{"0"}, null, null, LocationContract.COL_DATE_FIN_LOCATION + " ASC");
+
+        if (c != null && c.moveToFirst()) {
+
+            do {
+                Location location = locationBuilder(c);
+                listeLocation.add(location);
+
+            } while (c.moveToNext());
+        }
+        return listeLocation;
+    }
 
     public Location locationBuilder(Cursor c) {
 
