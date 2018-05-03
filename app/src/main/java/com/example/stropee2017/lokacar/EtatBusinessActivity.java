@@ -15,7 +15,7 @@ import com.example.stropee2017.lokacar.dao.VoitureDAO;
 import java.util.ArrayList;
 import java.util.List;
 
-class EtatBusinessActivity extends AppCompatActivity{
+public class EtatBusinessActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +28,7 @@ class EtatBusinessActivity extends AppCompatActivity{
         List<Voiture> maListe = new ArrayList<>();
         maListe = daoVoiture.getListe(1);
 
-        DetailBusinessAdapter adapter = new DetailBusinessAdapter(this,R.layout.etat_business_details,maListe);
+        DetailBusinessAdapter adapter = new DetailBusinessAdapter(this, R.layout.etat_business_details, maListe);
 
       /*  for(Voiture voiture:maListe) {
             if (voiture.getDispo() == true) {

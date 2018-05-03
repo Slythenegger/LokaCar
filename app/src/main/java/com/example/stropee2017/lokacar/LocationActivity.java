@@ -1,9 +1,8 @@
 package com.example.stropee2017.lokacar;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -15,6 +14,7 @@ import com.example.stropee2017.lokacar.beans.Voiture;
 import com.example.stropee2017.lokacar.dao.LocationDAO;
 
 import java.util.Date;
+
 
 public class LocationActivity extends AppCompatActivity {
 

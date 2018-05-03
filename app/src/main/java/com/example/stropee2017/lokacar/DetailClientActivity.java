@@ -22,6 +22,8 @@ public class DetailClientActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
 
+
+
         TextView tv;
         Intent intent = getIntent();
         ClientDAO dao = new ClientDAO(this);
