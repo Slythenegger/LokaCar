@@ -16,6 +16,8 @@ import com.example.stropee2017.lokacar.dao.AgenceDAO;
 import com.example.stropee2017.lokacar.dao.LoginDAO;
 import com.example.stropee2017.lokacar.dao.contract.LoginContract;
 
+import java.text.ParseException;
+
 public class LoginActivity extends AppCompatActivity {
     Agence luc;
     Button boutonLogin, boutonCancel;
@@ -41,7 +43,13 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 AgenceDAO agenceDAO = new AgenceDAO(LoginActivity.this);
-                luc = agenceDAO.findAgenceById(Integer.parseInt((username.getText().toString())));
+
+                try{
+                    luc = agenceDAO.findAgenceById(Integer.parseInt((username.getText().toString())));
+                }catch (Exception e){
+                    
+                }
+
 
                 if (luc != null && password.getText().toString().equals(luc.getPassword())) {
 
