@@ -81,6 +81,7 @@ public class LocationEnCoursActivity extends AppCompatActivity {
 
         location.setEnCours(false);
         LocationDAO dao = new LocationDAO(this);
+        location.getVoiture().setDispo(true);
         dao.insertOrUpdate(location);
         backAccueil(view);
 

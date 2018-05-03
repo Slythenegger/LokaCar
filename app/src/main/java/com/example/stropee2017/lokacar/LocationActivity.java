@@ -96,6 +96,8 @@ public class LocationActivity extends AppCompatActivity {
             int nb = (int) nbJours;
             location.setPrixLocation(nb * location.getVoiture().getTarif());
 
+
+            location.getVoiture().setDispo(false);
             location.setIdLocation(dao.insertOrUpdate(location));
 
             Intent intent = new Intent(this, LocationEnCoursActivity.class);

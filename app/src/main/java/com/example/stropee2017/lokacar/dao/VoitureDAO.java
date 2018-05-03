@@ -23,8 +23,31 @@ public class VoitureDAO {
 
     public long insert(Voiture item) {
 
+        long id;
         //connexion à la BDD pour écrire dedans
         SQLiteDatabase db = helper.getWritableDatabase();
+
+        if (item.getId() <= 0) {
+
+            ContentValues c = buildContent(item);
+            id = db.insert(VoitureContract.TABLE_NAME, null, c);
+
+        } else {
+
+            id = item.getId();
+            ContentValues c = buildContent(item);
+            db.update(VoitureContract.TABLE_NAME, c, VoitureContract.COL_ID_VOITURE + "=?", new String[]{String.valueOf(id)});
+        }
+
+        if (db != null) {
+            db.close();
+        }
+
+        return id;
+
+    }
+
+    public ContentValues buildContent(Voiture item) {
 
         ContentValues c = new ContentValues();
         c.put(VoitureContract.COL_MARQUE, item.getMarque());
@@ -41,15 +64,9 @@ public class VoitureDAO {
         c.put(VoitureContract.COL_ANNEE, item.getAnnee());
         c.put(VoitureContract.COL_ID_AGENCE, item.getIdAgence());
 
-        long id = db.insert(VoitureContract.TABLE_NAME, null, c);
-
-        if (db != null) {
-            db.close();
-        }
-
-        return id;
-
+        return c;
     }
+
 
     public List<Voiture> getListe(long id) {
 

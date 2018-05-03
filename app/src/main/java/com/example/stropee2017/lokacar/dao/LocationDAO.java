@@ -42,6 +42,8 @@ public class LocationDAO {
             c.put(LocationContract.COL_ETAT_LOCATION, location.isEnCours());
 
             id = db.insert(LocationContract.TABLE_NAME, null, c);
+            VoitureDAO dao = new VoitureDAO(context);
+            dao.insert(location.getVoiture());
 
         } else {
 
@@ -57,6 +59,8 @@ public class LocationDAO {
             c.put(LocationContract.COL_ETAT_LOCATION, location.isEnCours());
 
             db.update(LocationContract.TABLE_NAME, c, LocationContract.COL_ID_LOCATION + "=?", new String[]{String.valueOf(id)});
+            VoitureDAO dao = new VoitureDAO(context);
+            dao.insert(location.getVoiture());
 
         }
 
