@@ -27,6 +27,22 @@ public class LocationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location);
+
+        Intent intent = getIntent();
+
+        if (intent.getParcelableExtra("clientLoc") != null) {
+            this.client = intent.getParcelableExtra("clientLoc");
+            tv = findViewById(R.id.txtIdNomClient);
+            tv.setText(client.getNom() + " " + client.getPrenom());
+        }
+
+        if (intent.getParcelableExtra("voitureLoc") != null) {
+            this.voiture = intent.getParcelableExtra("voitureLoc");
+            tv = findViewById(R.id.txtIdVoiture);
+            tv.setText(voiture.getMarque() + " " + " " + voiture.getModele() + " " + voiture.getImmat());
+        }
+
+
     }
 
     public void addVoiture(View view) {
@@ -41,6 +57,7 @@ public class LocationActivity extends AppCompatActivity {
         intent.putExtra("newLocation", true);
         startActivityForResult(intent, 100);
     }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

@@ -27,7 +27,7 @@ public class VoitureActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_voiture);
-        
+
         //la liste s'intégrera dans la layout identifié par listVoitures
         lv = (ListView) findViewById(R.id.listVoitures);
         ViewGroup headerView = (ViewGroup) getLayoutInflater().inflate(R.layout.activity_header_list_voitures, lv, false);
@@ -38,8 +38,6 @@ public class VoitureActivity extends AppCompatActivity {
     //aficher la liste des voitures
     @Override
     protected void onResume() {
-
-
 
 
         VoitureDAO voitureDAO = new VoitureDAO(VoitureActivity.this);
@@ -54,7 +52,7 @@ public class VoitureActivity extends AppCompatActivity {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if(position>0){
+                if (position > 0) {
                     Voiture voiture = listeVoitures.get(position - 1);
                     Intent intent = new Intent(VoitureActivity.this, DetailVoitureActivity.class);
                     intent.putExtra("id", voiture.getId());
@@ -73,9 +71,14 @@ public class VoitureActivity extends AppCompatActivity {
                 Intent intent = getIntent();
                 if (intent.getBooleanExtra("newLocation", false) == false) {
 
-                    return false;
+                    Intent newIntentLocation = new Intent(VoitureActivity.this, LocationActivity.class);
+                    Voiture voiture = listeVoitures.get(position - 1);
+                    newIntentLocation.putExtra("voitureLoc", voiture);
+                    startActivity(newIntentLocation);
+                    return true;
 
                 } else {
+
                     Intent monIntent = new Intent();
                     Voiture voiture = listeVoitures.get(position - 1);
                     monIntent.putExtra("voiture", voiture);

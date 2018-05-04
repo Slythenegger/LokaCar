@@ -63,6 +63,7 @@ public class ClientActivity extends AppCompatActivity {
             }
         });
 
+
         lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
@@ -71,7 +72,12 @@ public class ClientActivity extends AppCompatActivity {
                 Intent intent = getIntent();
                 if (intent.getBooleanExtra("newLocation", false) == false) {
 
-                    return false;
+                    Intent newIntentLocation = new Intent(ClientActivity.this, LocationActivity.class);
+                    Client client = listeClient.get(position - 1);
+                    newIntentLocation.putExtra("clientLoc", client);
+                    startActivity(newIntentLocation);
+
+                    return true;
 
                 } else {
                     Intent monIntent = new Intent();
